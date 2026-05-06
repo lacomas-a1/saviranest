@@ -33,7 +33,7 @@
                     <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=500&fit=crop"
                         alt="Snorkeling Watamu" class="tour-image">
                 </div>
-                <div class="p-4 p-lg-5">
+                <div class="p-4 p-lg-3">
                     <!-- Compact Action Bar -->
                     <div class="compact-action-bar">
                         <div class="d-flex flex-wrap gap-2">
@@ -42,12 +42,11 @@
                             <span class="action-badge"><i class="fas fa-star"></i> 4.9/5 Rating</span>
                         </div>
                         <div class="d-flex flex-wrap gap-2">
-                            <a href="{{ route('booking') }}" class="compact-btn compact-btn-primary"><i class="fas fa-ticket-alt"></i> Book Now</a>
+                            <a href="booking.html" class="compact-btn compact-btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#bookingModal"><i class="fas fa-calendar-check"></i> Book Now</a>
                             <a href="https://wa.me/254712345678?text=I'm%20interested%20in%20Snorkeling%20%26%20Dolphin%20Watch"
                                 target="_blank" class="compact-btn compact-btn-whatsapp"><i class="fab fa-whatsapp"></i>
                                 WhatsApp</a>
-                            {{-- <a href="tel:+254712345678" class="compact-btn compact-btn-phone"><i class="fas fa-phone"></i>
-                                Call</a> --}}
                         </div>
                     </div>
 
@@ -290,9 +289,8 @@
                                         <option value="4">★★★★☆ (4)</option>
                                         <option value="3">★★★☆☆ (3)</option>
                                     </select></div>
-                                <div class="col-12">
-                                    <textarea id="reviewText" class="form-control" rows="3" placeholder="Write your review..."></textarea>
-                                </div>
+                                <div class="col-12"><textarea id="reviewText" class="form-control" rows="3"
+                                        placeholder="Write your review..."></textarea></div>
                                 <div class="col-12"><button class="btn btn-primary"
                                         style="background:var(--support-green)" onclick="addNewReview()">Submit
                                         Review</button></div>
@@ -328,5 +326,4 @@
             </div>
         </div>
     </main>
-
 @endsection

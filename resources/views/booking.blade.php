@@ -27,7 +27,6 @@
 
     <div class="container">
         <div class="booking-card">
-            <!-- Toggle between Stay and Experience -->
             <div class="toggle-booking-type">
                 <button type="button" id="stayTypeBtn" class="booking-type-btn active"><i class="fas fa-bed me-2"></i>
                     Book a Stay</button>
@@ -35,12 +34,10 @@
                     Book an Experience</button>
             </div>
 
-            <!-- Main Booking Form -->
             <form id="bookingForm">
-                <!-- Hidden field to store booking type -->
                 <input type="hidden" id="bookingType" value="stay">
 
-                <!-- STAY SPECIFIC FIELDS (visible by default) -->
+                <!-- STAY FIELDS (Room Type removed) -->
                 <div id="stayFields">
                     <div class="row">
                         <div class="col-md-6 form-group">
@@ -73,37 +70,35 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label class="form-label-custom"><i class="fas fa-calendar-check"></i> Check-in Date
+                            <label class="form-label-custom"><i class="fas fa-calendar-alt"></i> Check-in & Check-out
                                 *</label>
-                            <input type="date" id="checkin" class="form-control-booking" required>
+                            <input type="text" id="dateRangePicker" class="form-control-booking"
+                                placeholder="Select date range" readonly>
                         </div>
                         <div class="col-md-6 form-group">
-                            <label class="form-label-custom"><i class="fas fa-calendar-day"></i> Check-out Date
-                                *</label>
-                            <input type="date" id="checkout" class="form-control-booking" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 form-group">
-                            <label class="form-label-custom"><i class="fas fa-user-friends"></i> Adults</label>
-                            <input type="number" id="adults" class="form-control-booking" value="2" min="1" max="10">
-                        </div>
-                        <div class="col-md-4 form-group">
-                            <label class="form-label-custom"><i class="fas fa-child"></i> Children</label>
-                            <input type="number" id="children" class="form-control-booking" value="0" min="0" max="6">
-                        </div>
-                        <div class="col-md-4 form-group">
                             <label class="form-label-custom"><i class="fas fa-bed"></i> Nights *</label>
                             <input type="number" id="nights" class="form-control-booking" placeholder="Auto-calculated"
                                 readonly style="background:#eef2ff;">
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label class="form-label-custom"><i class="fas fa-user-friends"></i> Adults</label>
+                            <input type="number" id="adults" class="form-control-booking" value="2" min="1"
+                                max="10">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="form-label-custom"><i class="fas fa-child"></i> Children</label>
+                            <input type="number" id="children" class="form-control-booking" value="0" min="0"
+                                max="6">
+                        </div>
+                    </div>
                 </div>
 
-                <!-- EXPERIENCE SPECIFIC FIELDS (hidden initially) -->
+                <!-- EXPERIENCE FIELDS -->
                 <div id="experienceFields" style="display: none;">
                     <div class="row">
-                        <div class="col-md-12 form-group">
+                        <div class="col-md-6 form-group">
                             <label class="form-label-custom"><i class="fas fa-tree"></i> Select Experience *</label>
                             <select id="experienceItem" class="form-select-booking">
                                 <option value="">-- Choose an adventure --</option>
@@ -121,28 +116,29 @@
                                     Tour – KES 4,500 p.p</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6 form-group">
                             <label class="form-label-custom"><i class="fas fa-calendar-alt"></i> Preferred Date
                                 *</label>
                             <input type="date" id="experienceDate" class="form-control-booking">
                         </div>
+                    </div>
+                    <div class="row">
+
                         <div class="col-md-6 form-group">
-                            <label class="form-label-custom"><i class="fas fa-users"></i> Number of Participants
-                                *</label>
-                            <input type="number" id="participants" class="form-control-booking" value="2" min="1"
-                                max="20">
+                            <label class="form-label-custom"><i class="fas fa-users"></i> Participants *</label>
+                            <input type="number" id="participants" class="form-control-booking" value="2"
+                                min="1" max="20">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="form-label-custom"><i class="fas fa-clock"></i> Preferred Time Slot</label>
+                            <select id="timeSlot" class="form-select-booking">
+                                <option value="Morning (8:00 AM)">Morning (8:00 AM)</option>
+                                <option value="Afternoon (1:00 PM)">Afternoon (1:00 PM)</option>
+                                <option value="Full Day">Full Day</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label-custom"><i class="fas fa-clock"></i> Preferred Time Slot</label>
-                        <select id="timeSlot" class="form-select-booking">
-                            <option value="Morning (8:00 AM)">Morning (8:00 AM)</option>
-                            <option value="Afternoon (1:00 PM)">Afternoon (1:00 PM)</option>
-                            <option value="Full Day">Full Day</option>
-                        </select>
-                    </div>
+
                 </div>
 
                 <!-- Common Guest Information -->
@@ -154,8 +150,8 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label-custom"><i class="fas fa-envelope"></i> Email *</label>
-                        <input type="email" id="guestEmail" class="form-control-booking" placeholder="hello@example.com"
-                            required>
+                        <input type="email" id="guestEmail" class="form-control-booking"
+                            placeholder="hello@example.com" required>
                     </div>
                     <div class="col-md-4 form-group">
                         <label class="form-label-custom"><i class="fas fa-phone-alt"></i> Phone (WhatsApp) *</label>
@@ -166,11 +162,12 @@
                 <div class="row">
                     <div class="col-md-12 form-group">
                         <label class="form-label-custom"><i class="fas fa-comment"></i> Special Requests</label>
-                        <textarea rows="3" placeholder="Dietary, accessibility,..." class="form-control-booking"></textarea>
+                        <textarea rows="3" id="specialRequests" placeholder="Dietary, accessibility, ..."
+                            class="form-control-booking"></textarea>
                     </div>
                 </div>
 
-                <!-- Price Summary & Booking Button -->
+                <!-- Price Summary -->
                 <div class="price-summary" id="priceSummary">
                     <div class="d-flex justify-content-between align-items-center">
                         <span><strong>Total estimated price:</strong></span>
@@ -185,5 +182,4 @@
             </form>
         </div>
     </div>
-
 @endsection

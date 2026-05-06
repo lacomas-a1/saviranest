@@ -138,4 +138,19 @@ class PageController extends Controller
 
         return view('stay-details', compact('seo'));
     }
+
+    public function accdetails()
+    {
+        $seo = [
+            'title' => 'Watamu Beach Resort | SaviraNest – Deluxe Ocean View Room',
+            'description' => 'Book the Deluxe Ocean View Room at Watamu Beach Resort. Oceanfront luxury, infinity pool, direct beach access, and Swahili hospitality.',
+            'keywords' => 'Watamu Beach Resort, Deluxe Ocean View Room, Watamu accommodation, beachfront hotel Kenya',
+            'image' => asset('assets/image/favicon.ico'),
+            // 'canonical' => 'https://saviranest.co.ke/',
+            // 'url' => 'https://saviranest.co.ke/',
+            'type' => 'website',
+        ];
+
+        return view('acc-details', compact('seo'));
+    }
 }

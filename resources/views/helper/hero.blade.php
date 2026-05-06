@@ -12,7 +12,7 @@
                                 href="{{ route('home') }}">Home</a>
                             <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"
                                 href="{{ route('about') }}">About</a>
-                            <a class="nav-link {{ request()->routeIs('stays') ? 'active' : '' }}"
+                            <a class="nav-link {{ request()->routeIs('stays', 'staydetails', 'accdetails') ? 'active' : '' }}"
                                 href="{{ route('stays') }}">Stays</a>
                             <a class="nav-link {{ request()->routeIs('experiences', 'expdetails') ? 'active' : '' }}"
                                 href="{{ route('experiences') }}">Experiences</a>

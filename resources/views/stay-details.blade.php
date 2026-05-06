@@ -33,7 +33,7 @@
                     <img src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-4.0.3"
                         alt="Watamu Beach Resort" class="tour-image">
                 </div>
-                <div class="p-2 p-lg-5">
+                <div class="p-2 p-lg-3">
                     <!-- Compact Action Bar -->
                     <div class="compact-action-bar">
                         <div class="d-flex flex-wrap gap-2">
@@ -44,11 +44,11 @@
                             <a href="#" class="compact-btn compact-btn-primary"><i class="fas fa-paper-plane"></i>
                                 Inquiry</a>
                             <!-- <a href="https://wa.me/254700123456?text=I%20would%20like%20to%20book%20Watamu%20Beach%20Resort"
-                                    target="_blank" class="compact-btn compact-btn-whatsapp"><i class="fab fa-whatsapp"></i>
-                                    WhatsApp</a> -->
+                                target="_blank" class="compact-btn compact-btn-whatsapp"><i class="fab fa-whatsapp"></i>
+                                WhatsApp</a> -->
                             <!-- <a href="tel:+254700123456" class="compact-btn compact-btn-phone"><i
-                                        class="fas fa-phone"></i> Call</a> -->
-                            <a href="#" onclick="event.preventDefault(); showTab('availability', this);"
+                                    class="fas fa-phone"></i> Call</a> -->
+                            <a href="booking.html"
                                 class="compact-btn compact-btn-phone">
                                 <i class="fas fa-ticket-alt"></i> Book
                             </a>
@@ -380,9 +380,8 @@
                                         <option value="5">★★★★★ (5)</option>
                                         <option value="4">★★★★☆ (4)</option>
                                     </select></div>
-                                <div class="col-12">
-                                    <textarea id="reviewText" class="form-control" rows="3" placeholder="Write your review..."></textarea>
-                                </div>
+                                <div class="col-12"><textarea id="reviewText" class="form-control" rows="3"
+                                        placeholder="Write your review..."></textarea></div>
                                 <div class="col-12"><button class="btn btn-primary"
                                         style="background:var(--support-green)" onclick="addNewReview()">Submit
                                         Review</button></div>
@@ -394,92 +393,6 @@
                     <div id="availability" class="tab-pane">
                         <h3 class="mb-4">Check Availability & Book</h3>
                         <div id="calendarRoot" class="calendar-container"></div>
-                        <div class="selection-info" id="selectionInfo">
-                            <form id="bookingForm" class="booking-form mt-4">
-
-                                <h4 class="mb-3">Complete Your Booking</h4>
-
-                                <!-- Suite Selection -->
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Select Suite</label>
-                                        <select class="form-select" id="roomSelect" required>
-                                            <option value="">-- Choose Suite --</option>
-                                            <option value="Deluxe Ocean View Room">Deluxe Ocean View Room</option>
-                                            <option value="Family Terrace Suite">Family Terrace Suite</option>
-                                            <option value="Honeymoon Penthouse">Honeymoon Penthouse</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Guest Details -->
-                                    <!-- <div class="row"> -->
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Full Name</label>
-                                        <input type="text" class="form-control" id="guestName" placeholder="John Doe"
-                                            required>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Phone Number</label>
-                                        <input type="tel" class="form-control" id="guestPhone" placeholder="+254..."
-                                            required>
-                                    </div>
-
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Email Address</label>
-                                        <input type="email" class="form-control" id="guestEmail"
-                                            placeholder="you@email.com" required>
-                                    </div>
-                                </div>
-
-                                <!-- Guests -->
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Adults</label>
-                                        <input type="number" class="form-control" id="adults" min="1"
-                                            value="1" required>
-                                    </div>
-
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Children</label>
-                                        <input type="number" class="form-control" id="children" min="0"
-                                            value="0">
-                                    </div>
-                                </div>
-
-                                <!-- Date Info (from your calendar) -->
-                                <div class="mb-3">
-                                    <label class="form-label">Selected Dates</label>
-                                    <input type="text" class="form-control" id="selectedRangeText" readonly
-                                        placeholder="Pick dates from calendar">
-                                </div>
-
-                                <!-- Special Requests -->
-                                <div class="mb-3">
-                                    <label class="form-label">Special Requests</label>
-                                    <textarea class="form-control" id="requests" rows="3"
-                                        placeholder="Anything we should prepare for your stay?"></textarea>
-                                </div>
-
-                                <!-- Price Summary -->
-                                <div class="alert alert-info">
-                                    <strong>Note:</strong> Booking requires a <strong>50% deposit</strong>.
-                                    Final price
-                                    will be calculated based on selected dates.
-                                </div>
-
-                                <!-- Submit -->
-                                <button type="submit" id="bookNowAvailBtn" class="btn-exp-book w-100">
-                                    <i class="fas fa-lock me-1"></i> Confirm Booking (Pay 50%) →
-                                </button>
-
-                            </form>
-                            <!-- <p><strong>Selected dates:</strong> <span id="selectedRangeText">None</span></p> -->
-                            <!-- <button id="bookNowAvailBtn" class="book-now-avail btn-large"
-                                    style="background: var(--sunrise-gold);">Book Now</button> -->
-                        </div>
                     </div>
 
                     <!-- Photo Gallery Carousel -->
@@ -487,14 +400,14 @@
                     <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active"><img
-                                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5" class="d-block w-100"
-                                    alt="Pool"></div>
+                                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5"
+                                    class="d-block w-100" alt="Pool"></div>
                             <div class="carousel-item"><img
                                     src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
                                     class="d-block w-100" alt="Beach"></div>
                             <div class="carousel-item"><img
-                                    src="https://images.unsplash.com/photo-1547970810-dc1eac37d174" class="d-block w-100"
-                                    alt="Dining"></div>
+                                    src="https://images.unsplash.com/photo-1547970810-dc1eac37d174"
+                                    class="d-block w-100" alt="Dining"></div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel"
                             data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
@@ -506,13 +419,13 @@
 
             <!-- CTA Section -->
             <!-- <div class="cta-block fade-up text-center">
-                    <i class="fas fa-umbrella-beach" style="font-size: 2.5rem; color: var(--sunrise-gold);"></i>
-                    <h3 style="font-size: 1.8rem; margin-top: 12px;">Book Your Coastal Escape</h3>
-                    <p>Direct ocean views, Swahili hospitality, and unforgettable sunsets await.</p>
-                    <button class="btn-large"
-                        onclick="alert('✨ Thank you for choosing Watamu Beach Resort! Our team will reach out to confirm your stay.')">Check
-                        Availability →</button>
-                </div> -->
+                <i class="fas fa-umbrella-beach" style="font-size: 2.5rem; color: var(--sunrise-gold);"></i>
+                <h3 style="font-size: 1.8rem; margin-top: 12px;">Book Your Coastal Escape</h3>
+                <p>Direct ocean views, Swahili hospitality, and unforgettable sunsets await.</p>
+                <button class="btn-large"
+                    onclick="alert('✨ Thank you for choosing Watamu Beach Resort! Our team will reach out to confirm your stay.')">Check
+                    Availability →</button>
+            </div> -->
 
             <div class="mt-2 mb-4 text-center">
                 <a href="acc.html" class="btn-back-stays"><i class="fas fa-arrow-left me-2"></i>Back to

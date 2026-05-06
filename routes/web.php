@@ -15,6 +15,7 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/booking', 'booking')->name('booking');
     Route::get('/exp-details', 'expdetails')->name('expdetails');
     Route::get('/stay-details', 'staydetails')->name('staydetails');
+    Route::get('/acc-details', 'accdetails')->name('accdetails');
 });
 
 Route::controller(AuthController::class)->group(function () {
