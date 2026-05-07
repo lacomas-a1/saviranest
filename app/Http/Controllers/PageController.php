@@ -7,12 +7,10 @@ class PageController extends Controller
     public function home()
     {
         $seo = [
-            'title' => 'SaviraNest | Your Nest Away From Home',
-            'description' => 'Discover handpicked stays from luxury beach resorts to safari lodges. Book your perfect escape with SaviraNest.',
-            'keywords' => 'Kenya accommodations, beach resorts, safari lodges, Watamu hotels, Diani resorts, vacation rentals',
+            'title' => 'Luxury Stays & Travel Experiences in Kenya | SaviraNest',
+            'description' => 'Book luxury beach resorts, safari lodges, oceanfront villas, and curated travel experiences across Kenya. Discover unforgettable stays with SaviraNest.',
+            'keywords' => 'luxury stays Kenya, Kenya vacation rentals, beachfront villas Kenya, safari lodges Kenya, Watamu resorts, Diani beach hotels, boutique stays Kenya, oceanfront accommodation, travel experiences Kenya, luxury travel Africa, holiday homes Kenya, romantic getaways Kenya, family vacations Kenya, Swahili coastal stays, luxury apartments Kenya, Kenyan coast accommodation, safari experiences Africa, luxury villa rentals, eco resorts Kenya, vacation homes Africa',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -22,12 +20,10 @@ class PageController extends Controller
     public function about()
     {
         $seo = [
-            'title' => 'SaviraNest | About – Your Nest Away From Home',
-            'description' => 'Discover SaviraNest – handpicked stays from urban apartments to safari lodges. About our mission, features, and why travelers love us.',
-            'keywords' => 'SaviraNest about, curated stays Kenya, vacation rentals, boutique accommodations',
+            'title' => 'About SaviraNest | Curated Luxury Stays & Experiences',
+            'description' => 'Learn about SaviraNest and our mission to connect travelers with exceptional stays, coastal escapes, safari lodges, and authentic Kenyan experiences.',
+            'keywords' => 'about SaviraNest, Kenya travel company, curated stays Kenya, luxury accommodation Africa, boutique travel experiences, hospitality Kenya, coastal retreats Kenya, safari travel experts, luxury vacation rentals',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -37,12 +33,10 @@ class PageController extends Controller
     public function stays()
     {
         $seo = [
-            'title' => 'SaviraNest | Premium Accommodations & Stays',
-            'description' => 'Discover the best accommodations in Kenya from luxury beach resorts to safari lodges. Handpicked stays with ocean views, wildlife encounters, and Swahili charm.',
-            'keywords' => 'SaviraNest, Kenya accommodations, beach resorts Kenya, safari lodges, Kilifi stays, Watamu hotels, Diani resorts, camping rentals Kenya, travel experiences Kenya',
+            'title' => 'Luxury Accommodations & Beach Resorts in Kenya | SaviraNest',
+            'description' => 'Explore handpicked luxury accommodations including beach resorts, villas, safari lodges, apartments, and oceanfront retreats across Kenya.',
+            'keywords' => 'Kenya accommodation, luxury resorts Kenya, beach villas Kenya, Watamu hotels, Diani resorts, Kilifi stays, luxury apartments Nairobi, boutique hotels Kenya, beachfront stays Africa, safari camps Kenya, holiday rentals Kenya',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -52,12 +46,10 @@ class PageController extends Controller
     public function experiences()
     {
         $seo = [
-            'title' => 'SaviraNest | Experiences – Curated Local Adventures',
-            'description' => 'Book unforgettable experiences along Kenyas coast and beyond: sunset dhow cruises, safari adventures, cultural tours, and wellness retreats.',
-            'keywords' => 'Kenya experiences, Watamu boat tours, safari day trips, cooking classes, snorkeling, yoga retreats',
+            'title' => 'Kenya Travel Experiences & Coastal Adventures | SaviraNest',
+            'description' => 'Book unforgettable travel experiences including snorkeling, dolphin tours, dhow cruises, safaris, cultural tours, and wellness retreats in Kenya.',
+            'keywords' => 'Kenya experiences, snorkeling Watamu, dolphin tours Kenya, dhow cruises, safari adventures Kenya, ocean activities Kenya, Swahili cultural tours, deep sea fishing Kenya, travel adventures Africa',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -67,12 +59,10 @@ class PageController extends Controller
     public function pricing()
     {
         $seo = [
-            'title' => 'SaviraNest | Pricing – Host Plans & Booking Fees',
-            'description' => 'Transparent pricing for property partners. List your stay with SaviraNest and reach global travelers. Flexible plans, low commissions.',
-            'keywords' => 'SaviraNest pricing, host plans, accommodation listing fees, vacation rental commission, Kenya stays',
+            'title' => 'Host Pricing & Property Listing Plans | SaviraNest',
+            'description' => 'List your property on SaviraNest and reach travelers worldwide. Flexible pricing plans, transparent commissions, and premium property exposure.',
+            'keywords' => 'property listing Kenya, host pricing, vacation rental commissions, list your villa Kenya, property management Kenya, Airbnb alternative Kenya, luxury stay hosting',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -82,12 +72,10 @@ class PageController extends Controller
     public function contact()
     {
         $seo = [
-            'title' => 'SaviraNest | Contact -  Your Nest Away From Home',
-            'description' => 'Reach out to SaviraNest for bookings, partnerships, or travel advice. Visit our office in Kilifi or send us a message.',
-            'keywords' => 'SaviraNest contact, customer support, booking inquiries, Kenya stays, Kilifi office',
+            'title' => 'Contact SaviraNest | Bookings, Travel Help & Partnerships',
+            'description' => 'Contact SaviraNest for accommodation bookings, partnerships, travel inquiries, and curated Kenya travel experiences. We are here to help.',
+            'keywords' => 'contact SaviraNest, Kenya travel support, booking inquiries Kenya, accommodation assistance, coastal travel Kenya, hospitality support Africa',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -97,12 +85,10 @@ class PageController extends Controller
     public function booking()
     {
         $seo = [
-            'title' => 'SaviraNest | Book Stays & Experiences – Reserve Your Adventure',
-            'description' => 'Book your perfect stay or experience in Kenya. Choose from handpicked beach resorts, safari lodges, cultural tours, and more. Instant confirmation.',
-            'keywords' => 'SaviraNest booking, Kenya stay booking, experience booking Kenya, beach resorts Kenya, safari lodges, Diani resorts, Masai Mara safari, Watamu snorkeling',
+            'title' => 'Book Luxury Stays & Experiences in Kenya | SaviraNest',
+            'description' => 'Reserve luxury accommodations, safari lodges, beach villas, and curated experiences across Kenya with instant booking and secure payments.',
+            'keywords' => 'book Kenya accommodation, Kenya stay booking, reserve safari lodge, beach villa booking Kenya, Watamu resorts booking, luxury travel Kenya',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -112,12 +98,10 @@ class PageController extends Controller
     public function expdetails()
     {
         $seo = [
-            'title' => 'Snorkeling & Dolphin Watch | SaviraNest – Ocean Safari Experience',
-            'description' => 'Snorkel vibrant coral gardens, swim with wild dolphins, and enjoy a picnic on a secluded sandbank. All gear included. Book your Watamu ocean adventure.',
-            'keywords' => 'snorkeling Watamu, dolphin watching Kenya, ocean safari, marine adventure, sandbank picnic, SaviraNest experiences',
+            'title' => 'Snorkeling & Dolphin Watch in Watamu | SaviraNest',
+            'description' => 'Enjoy snorkeling, dolphin watching, coral reef adventures, and sandbank picnics in Watamu. Book unforgettable ocean experiences with SaviraNest.',
+            'keywords' => 'snorkeling Watamu, dolphin watching Kenya, Watamu marine park, ocean safari Kenya, coral reef adventures, beach excursions Kenya',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -127,12 +111,10 @@ class PageController extends Controller
     public function staydetails()
     {
         $seo = [
-            'title' => 'Watamu Beach Resort | SaviraNest – Premium Oceanfront Stay',
-            'description' => 'Experience luxury beachfront accommodation at Watamu Beach Resort. Direct Indian Ocean access, infinity pool, fine dining, and marine adventures.',
-            'keywords' => 'Watamu Beach Resort, Watamu accommodation, beachfront hotel Kenya, SaviraNest stays, luxury oceanfront stay Kenya',
+            'title' => 'Watamu Beach Resort | Luxury Oceanfront Stay in Kenya',
+            'description' => 'Experience beachfront luxury at Watamu Beach Resort with ocean views, infinity pools, spa experiences, and direct beach access.',
+            'keywords' => 'Watamu Beach Resort, oceanfront hotel Kenya, luxury resort Watamu, beachfront accommodation Kenya, Indian Ocean resorts',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 
@@ -142,12 +124,10 @@ class PageController extends Controller
     public function accdetails()
     {
         $seo = [
-            'title' => 'Watamu Beach Resort | SaviraNest – Deluxe Ocean View Room',
-            'description' => 'Book the Deluxe Ocean View Room at Watamu Beach Resort. Oceanfront luxury, infinity pool, direct beach access, and Swahili hospitality.',
-            'keywords' => 'Watamu Beach Resort, Deluxe Ocean View Room, Watamu accommodation, beachfront hotel Kenya',
+            'title' => 'Deluxe Ocean View Room | Watamu Beach Resort',
+            'description' => 'Stay in a luxury ocean view room at Watamu Beach Resort featuring beachfront access, premium comfort, modern amenities, and coastal elegance.',
+            'keywords' => 'ocean view room Watamu, luxury hotel room Kenya, beachfront suite Watamu, deluxe accommodation Kenya',
             'image' => asset('assets/image/favicon.ico'),
-            // 'canonical' => 'https://saviranest.co.ke/',
-            // 'url' => 'https://saviranest.co.ke/',
             'type' => 'website',
         ];
 

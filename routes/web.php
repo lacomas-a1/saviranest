@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
@@ -23,4 +24,16 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/signup', 'signup')->name('signup');
     Route::get('/forget-password', 'forget')->name('forget');
     Route::get('/logout', 'logout')->name('logout');
+});
+
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::get('/stays', 'stays')->name('stays');
+    Route::get('/experience', 'experience')->name('experience');
+    Route::get('/booking', 'booking')->name('booking');
+    Route::get('/guest', 'guest')->name('guest');
+    Route::get('/transaction', 'transaction')->name('transaction');
+    Route::get('/report', 'report')->name('report');
+    Route::get('/exp-details', 'expdetails')->name('expdetails');
+    Route::get('/stay-details', 'staydetails')->name('staydetails');
 });

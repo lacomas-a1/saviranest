@@ -64,9 +64,87 @@
     </div>
 
     <main>
+
+        <div class="container">
+            <div class="section-toprow">
+                <div class="section-header" style="text-align:left;margin-bottom:0;">
+                    <h2>Browse by Category</h2>
+                    <p>Find the perfect stay tailored to your lifestyle and travel experience</p>
+                </div>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="locations-grid">
+                <!-- Row 1: 3 cards -->
+                <div class="loc-card">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80"
+                        alt="Beach Villas">
+                    <div class="loc-card-overlay"></div>
+                    <div class="loc-card-info">
+                        <h4>Beach Villas</h4><span>10 properties</span>
+                    </div>
+                    <button class="loc-view-btn">Explore Stays</button>
+                </div>
+
+                <div class="loc-card">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80"
+                        alt="Safari Lodges">
+                    <div class="loc-card-overlay"></div>
+                    <div class="loc-card-info">
+                        <h4>Safari Lodges</h4><span>8 properties</span>
+                    </div>
+                    <button class="loc-view-btn">Explore Stays</button>
+                </div>
+
+                <div class="loc-card">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80"
+                        alt="Luxury Apartments">
+                    <div class="loc-card-overlay"></div>
+                    <div class="loc-card-info">
+                        <h4>Luxury Apartments</h4><span>12 properties</span>
+                    </div>
+                    <button class="loc-view-btn">Explore Stays</button>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="loc-row">
+
+                    <div class="loc-card">
+                        <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=600&q=80"
+                            alt="Ocean Retreats">
+                        <div class="loc-card-overlay"></div>
+                        <div class="loc-card-info">
+                            <h4>Ocean Retreats</h4><span>7 properties</span>
+                        </div>
+                        <button class="loc-view-btn">Explore Stays</button>
+                    </div>
+
+                    <div class="loc-card">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80"
+                            alt="Family Homes">
+                        <div class="loc-card-overlay"></div>
+                        <div class="loc-card-info">
+                            <h4>Family Homes</h4><span>5 properties</span>
+                        </div>
+                        <button class="loc-view-btn">Explore Stays</button>
+                    </div>
+
+                    <div class="loc-card">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80"
+                            alt="Romantic Escapes">
+                        <div class="loc-card-overlay"></div>
+                        <div class="loc-card-info">
+                            <h4>Romantic Escapes</h4><span>4 properties</span>
+                        </div>
+                        <button class="loc-view-btn">Explore Stays</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <!-- Recommended Properties Section -->
         <div class="container">
-            <div class="section-title">Recommended for You</div>
+            <div class="section-title">Featured Stays</div>
             <div class="cards-grid fade-up">
                 <!-- Card 1 -->
                 <div class="stay-card">
@@ -74,8 +152,8 @@
                         class="stay-img" alt="Watamu Beach Resort">
                     <div class="stay-body">
                         <h3 class="stay-title">Watamu Beach Resort</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt" style="color:var(--sunrise-gold);"></i>
-                            Watamu, Kenya</div>
+                        <div class="stay-location"><i class="fas fa-map-marker-alt"
+                                style="color:var(--sunrise-gold);"></i> Watamu, Kenya</div>
                         <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                             4.7</div>
@@ -83,6 +161,9 @@
                         <div class="stay-price">KES 8,500 / night</div>
                         <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
                                 class="btn-inquire">Inquire</a></div>
+                        <div class="mt-2">
+                            <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Card 2 -->
@@ -91,14 +172,17 @@
                         class="stay-img" alt="Mara Serena Safari Lodge">
                     <div class="stay-body">
                         <h3 class="stay-title">Mara Serena Safari Lodge</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt" style="color:var(--sunrise-gold);"></i>
-                            Masai Mara</div>
+                        <div class="stay-location"><i class="fas fa-map-marker-alt"
+                                style="color:var(--sunrise-gold);"></i> Masai Mara</div>
                         <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
                         <p class="stay-desc">Overlooking savannah, all-inclusive with game drives.</p>
                         <div class="stay-price">KES 22,000 / night</div>
                         <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
                                 class="btn-inquire">Inquire</a></div>
+                        <div class="mt-2">
+                            <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -107,8 +191,8 @@
                         class="stay-img" alt="The Sands at Nomad">
                     <div class="stay-body">
                         <h3 class="stay-title">The Sands at Nomad</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt" style="color:var(--sunrise-gold);"></i>
-                            Diani Beach</div>
+                        <div class="stay-location"><i class="fas fa-map-marker-alt"
+                                style="color:var(--sunrise-gold);"></i> Diani Beach</div>
                         <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                             4.8</div>
@@ -116,62 +200,93 @@
                         <div class="stay-price">KES 14,000 / night</div>
                         <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
                                 class="btn-inquire">Inquire</a></div>
+                        <div class="mt-2">
+                            <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="center-btn">
+                <a href="#" class="btn-outline">Load More Items</a>
+            </div>
         </div>
 
-        <!-- Featured Stays Section -->
-        <div class="container" id="featured">
-            <div class="section-title">Featured Stays</div>
-            <div class="cards-grid fade-up">
-                <!-- Featured 1 -->
-                <div class="stay-card">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop"
-                        class="stay-img" alt="Diani Reef">
-                    <div class="stay-body">
-                        <h3 class="stay-title">Diani Reef Beach Resort</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt"
-                                style="color:var(--sunrise-gold);"></i> Diani, South Coast</div>
-                        <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.8</div>
-                        <p class="stay-desc">Luxury villas, private plunge pools, premier diving.</p>
-                        <div class="stay-price">KES 12,000 / night</div>
-                        <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
-                                class="btn-inquire">Inquire</a></div>
+        <!-- Features Section -->
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-badge">Why Choose SaviraNest</span>
+                <h2>Our Premium Features</h2>
+                <p>
+                    Experience modern hospitality with curated stays, personalized travel experiences,
+                    and seamless booking solutions designed for every traveler.
+                </p>
+            </div>
+            <div class="ftr-grid">
+                <!-- Main Card -->
+                <div class="ftr-main">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
+                        alt="Oceanfront Stays">
+                    <div class="ftr-main-content">
+                        <span class="ftr-tag">Featured</span>
+                        <h3>Luxury Oceanfront Escapes</h3>
+                        <p>
+                            Discover handpicked beachfront villas and coastal retreats with breathtaking
+                            ocean views and unforgettable experiences.
+                        </p>
                     </div>
                 </div>
-                <!-- Featured 2 -->
-                <div class="stay-card">
-                    <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=600&h=400&fit=crop"
-                        class="stay-img" alt="Lamu Swahili House">
-                    <div class="stay-body">
-                        <h3 class="stay-title">Lamu Swahili House</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt"
-                                style="color:var(--sunrise-gold);"></i> Lamu Island</div>
-                        <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            4.6</div>
-                        <p class="stay-desc">18th-century Swahili mansion with rooftop sea views.</p>
-                        <div class="stay-price">KES 9,500 / night</div>
-                        <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
-                                class="btn-inquire">Inquire</a></div>
-                    </div>
-                </div>
-                <!-- Featured 3 -->
-                <div class="stay-card">
-                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&h=400&fit=crop"
-                        class="stay-img" alt="Sarova Whitesands">
-                    <div class="stay-body">
-                        <h3 class="stay-title">Sarova Whitesands</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt"
-                                style="color:var(--sunrise-gold);"></i> Mombasa</div>
-                        <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 4.4</div>
-                        <p class="stay-desc">Five pools, lush gardens, family-friendly resort.</p>
-                        <div class="stay-price">KES 10,500 / night</div>
-                        <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
-                                class="btn-inquire">Inquire</a></div>
+
+                <!-- Right Grid -->
+                <div>
+                    <div class="ftr-right">
+                        <!-- Card -->
+                        <div class="ftr-sub-card">
+                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&q=80"
+                                alt="Easy Booking">
+                            <div class="ftr-sub-content">
+                                <h4>Easy Booking System</h4>
+                              <p>
+                                    Secure reservations with instant confirmations and smooth payments.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card -->
+                        <div class="ftr-sub-card">
+                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&q=80"
+                                alt="Safari Experiences">
+                            <span class="ftr-tag" style="position:absolute;top:14px;left:14px;">Safari</span>
+                            <div class="ftr-sub-content">
+                                <h4>Curated Experiences</h4>
+                                <p>
+                                    Explore safaris, ocean adventures, and unique local activities.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card -->
+                        <div class="ftr-sub-card">
+                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=500&q=80"
+                                alt="Smart Stay Management">
+                            <div class="ftr-sub-content">
+                                <h4>Smart Stay Management</h4>
+                                <p>
+                                    Manage bookings, communication, and personalized guest support.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                        <div class="ftr-sub-card" style="background:#0f172a;">
+
+                            <div class="ftr-sub-content" style="bottom:50%;transform:translateY(50%);">
+
+                                <h4>24/7 Guest Assistance</h4>
+
+                                <p>
+                                    Dedicated support available anytime for a seamless experience.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,23 +324,20 @@
             </div>
         </div>
 
+        <!-- Call to Action -->
         <div class="container">
             <div class="cta-banner fade-up">
-
                 <i class="fas fa-compass"
                     style="font-size: 2.5rem; color: var(--sunrise-gold); margin-bottom: 12px; display: inline-block;"></i>
-
                 <h3 style="font-size: 1.8rem; margin-bottom: 12px;">
                     Find Your Perfect Stay Today
                 </h3>
-
                 <p style="max-width: 500px; margin: 0 auto 20px;">
                     Browse unique homes, compare options, and book instantly with confidence.
                 </p>
-
                 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
                     <a href="{{ route('stays') }}" class="btn-hero-outline">Explore Stays</a>
-                    {{-- <a href="#plan" class="btn-hero-primary">Plan Your Trip</a> --}}
+                    <a href="#plan" class="btn-hero-primary">Contact Us</a>
                 </div>
 
             </div>

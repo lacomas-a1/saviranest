@@ -128,7 +128,7 @@
         <div class="container" id="faq">
             <div class="section-title">Frequently Asked Questions</div>
             <div class="fade-up">
-                <div class="faq-item">
+                {{-- <div class="faq-item">
                     <div class="faq-question"><span>How do I list my property on SaviraNest?</span><i
                             class="fas fa-plus faq-icon"></i></div>
                     <div class="faq-answer">Getting listed is simple and takes less than 30 minutes. Sign up for a host
@@ -136,7 +136,7 @@
                         including photos, amenities, pricing, and availability. Our review team checks every submission
                         for quality and accuracy. Once approved, your listing goes live within 48 hours and becomes
                         immediately visible to thousands of active travellers on the platform.</div>
-                </div>
+                </div> --}}
                 <div class="faq-item">
                     <div class="faq-question"><span>Are there long-term contracts?</span><i
                             class="fas fa-plus faq-icon"></i></div>
@@ -184,7 +184,7 @@
                         rates based on local demand, seasonal trends, and competitor pricing to help you maximise
                         occupancy and revenue.</div>
                 </div>
-                <div class="faq-item">
+                {{-- <div class="faq-item">
                     <div class="faq-question"><span>What happens if a guest damages my property?</span><i
                             class="fas fa-plus faq-icon"></i></div>
                     <div class="faq-answer">All bookings made through SaviraNest include host damage protection up to a
@@ -194,7 +194,7 @@
                         security deposit or the SaviraNest Host Guarantee fund. For high-value properties, we strongly
                         recommend enabling the optional security deposit feature on your listings as an additional layer
                         of protection.</div>
-                </div>
+                </div> --}}
                 <div class="faq-item">
                     <div class="faq-question"><span>How does the guest review system work for hosts?</span><i
                             class="fas fa-plus faq-icon"></i></div>

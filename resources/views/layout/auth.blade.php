@@ -41,11 +41,8 @@
             const pwd = document.getElementById('loginPassword').value;
 
             if (email && pwd) {
-                // Optional alert
-                alert(`🔐 Welcome back ${email}!`);
-
                 // ✅ Redirect to dashboard
-                window.location.href = 'admin/dashboard.html'; // adjust path if needed
+                window.location.href = '/dashboard'; // adjust path if needed
             } else {
                 alert('Please enter both email and password.');
             }
