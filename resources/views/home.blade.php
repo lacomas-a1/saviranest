@@ -76,8 +76,7 @@
             <div class="locations-grid">
                 <!-- Row 1: 3 cards -->
                 <div class="loc-card">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80"
-                        alt="Beach Villas">
+                    <img src="{{ asset('assets/image/explore/beach-villa.webp') }}" alt="Beach Villas">
                     <div class="loc-card-overlay"></div>
                     <div class="loc-card-info">
                         <h4>Beach Villas</h4><span>10 properties</span>
@@ -86,8 +85,7 @@
                 </div>
 
                 <div class="loc-card">
-                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80"
-                        alt="Safari Lodges">
+                    <img src="{{ asset('assets/image/explore/safari-lodge.webp') }}" alt="Safari Lodges">
                     <div class="loc-card-overlay"></div>
                     <div class="loc-card-info">
                         <h4>Safari Lodges</h4><span>8 properties</span>
@@ -96,8 +94,7 @@
                 </div>
 
                 <div class="loc-card">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80"
-                        alt="Luxury Apartments">
+                    <img src="{{ asset('assets/image/explore/luxury-apartments.webp') }}" alt="Luxury Apartments">
                     <div class="loc-card-overlay"></div>
                     <div class="loc-card-info">
                         <h4>Luxury Apartments</h4><span>12 properties</span>
@@ -109,8 +106,7 @@
                 <div class="loc-row">
 
                     <div class="loc-card">
-                        <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=600&q=80"
-                            alt="Ocean Retreats">
+                        <img src="{{ asset('assets/image/explore/ocean-retreats.webp') }}" alt="Ocean Retreats">
                         <div class="loc-card-overlay"></div>
                         <div class="loc-card-info">
                             <h4>Ocean Retreats</h4><span>7 properties</span>
@@ -119,8 +115,7 @@
                     </div>
 
                     <div class="loc-card">
-                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80"
-                            alt="Family Homes">
+                        <img src="{{ asset('assets/image/explore/familyhomes.webp') }}" alt="Family Homes">
                         <div class="loc-card-overlay"></div>
                         <div class="loc-card-info">
                             <h4>Family Homes</h4><span>5 properties</span>
@@ -129,8 +124,7 @@
                     </div>
 
                     <div class="loc-card">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80"
-                            alt="Romantic Escapes">
+                        <img src="{{ asset('assets/image/explore/romantic-escape.webp') }}" alt="Romantic Escapes">
                         <div class="loc-card-overlay"></div>
                         <div class="loc-card-info">
                             <h4>Romantic Escapes</h4><span>4 properties</span>
@@ -141,6 +135,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- Recommended Properties Section -->
         <div class="container">
@@ -207,7 +202,7 @@
                 </div>
             </div>
             <div class="center-btn">
-                <a href="#" class="btn-outline">Load More Items</a>
+                <a href="{{ route('stays') }}" class="btn-outline">Load More Items</a>
             </div>
         </div>
 
@@ -224,8 +219,7 @@
             <div class="ftr-grid">
                 <!-- Main Card -->
                 <div class="ftr-main">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
-                        alt="Oceanfront Stays">
+                    <img src="{{ asset('assets/image/feature/luxury-beachfront.webp') }}" alt="Oceanfront Stays">
                     <div class="ftr-main-content">
                         <span class="ftr-tag">Featured</span>
                         <h3>Luxury Oceanfront Escapes</h3>
@@ -241,11 +235,10 @@
                     <div class="ftr-right">
                         <!-- Card -->
                         <div class="ftr-sub-card">
-                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&q=80"
-                                alt="Easy Booking">
+                            <img src="{{ asset('assets/image/feature/easy-booking.webp') }}" alt="Easy Booking">
                             <div class="ftr-sub-content">
                                 <h4>Easy Booking System</h4>
-                              <p>
+                                <p>
                                     Secure reservations with instant confirmations and smooth payments.
                                 </p>
                             </div>
@@ -253,8 +246,7 @@
 
                         <!-- Card -->
                         <div class="ftr-sub-card">
-                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&q=80"
-                                alt="Safari Experiences">
+                            <img src="{{ asset('assets/image/feature/curated-escape.webp') }}" alt="Safari Experiences">
                             <span class="ftr-tag" style="position:absolute;top:14px;left:14px;">Safari</span>
                             <div class="ftr-sub-content">
                                 <h4>Curated Experiences</h4>
@@ -266,8 +258,7 @@
 
                         <!-- Card -->
                         <div class="ftr-sub-card">
-                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=500&q=80"
-                                alt="Smart Stay Management">
+                            <img src="{{ asset('assets/image/feature/smart-homes.webp') }}" alt="Smart Stay Management">
                             <div class="ftr-sub-content">
                                 <h4>Smart Stay Management</h4>
                                 <p>
@@ -293,7 +284,7 @@
         </div>
 
         <!-- Testimonials Section -->
-        <div class="container">
+        {{-- <div class="container">
             <div class="section-title">What Our Guests Say</div>
             <div class="testimonials-grid fade-up">
                 <div class="testimonial-card">
@@ -322,7 +313,7 @@
                     <p class="testimonial-name">— Amina & David</p>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Call to Action -->
         <div class="container">

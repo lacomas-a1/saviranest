@@ -4,6 +4,23 @@
 
 @section('content')
     <div class="right-side">
+        @if (session('success') || session('error'))
+            <div class="mb-4">
+
+                @if (session('success'))
+                    <div class="alert alert-success mb-2">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger mb-2">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+            </div>
+        @endif
         <div class="form-card p-6 fade-in">
             <h2 class="text-2xl font-bold text-white text-center mb-2">Welcome Back</h2>
             <p class="text-gray-300 text-center text-sm mb-6">Log in to continue your adventure</p>
@@ -39,9 +56,10 @@
                     <span class="text-gray-400 text-xs">or continue with</span>
                     <div class="divider-line"></div>
                 </div>
-                <button type="button" id="googleLoginBtn"
-                    class="w-full bg-white/10 border border-white/20 rounded-xl py-3 flex items-center justify-center gap-2 text-white hover:bg-white/20 transition"><i
-                        class="fab fa-google text-red-400"></i> Sign in with Google</button>
+                <a href="{{ route('google.login') }}"
+                    class="w-full bg-white/10 border border-white/20 rounded-xl py-3 flex items-center justify-center gap-2 text-white hover:bg-white/20 transition">
+                    <i class="fab fa-google text-red-400"></i> Sign in with Google
+                </a>
 
                 <!-- Link to Signup -->
                 <div class="text-center mt-5 text-xs text-gray-400">

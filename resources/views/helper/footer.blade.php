@@ -1,24 +1,20 @@
 <footer>
     <div class="container">
         <div class="footer-grid">
-            <img src="assets/image/savira_nest_logo.webp" alt="Savira Nest Logo"
-                style="background: #f0f2f5; border-radius: 12px; padding: 0 10px;">
+            <div class="footer-col-social">
+                <img src="assets/image/savira_nest_logo.webp" class="footer-img" alt="Savira Nest Logo">
+                <div class="footer-social">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    {{-- <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a> --}}
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://share.google/XAeXrKjuftJXnZMQj" target="_blank"><i class="fab fa-google"></i></a>
+                    <a href="https://wa.me/254712345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
             <div class="footer-col">
                 <h5>SaviraNest</h5>
                 <p>We connect travelers with extraordinary homes — from bustling city apartments to wild safari
                     nooks. Every stay is curated for comfort, local charm, and unforgettable memories.</p>
-                <div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i
-                            class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a
-                        href="https://wa.me/254712345678" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
-            </div>
-            <div class="footer-col">
-                <h5>Contact</h5>
-                <p><i class="fas fa-phone-alt" style="color:var(--orange);margin-right:6px;"></i> +254 712 345 678
-                </p>
-                <p><i class="fas fa-map-marker-alt" style="color:var(--orange);margin-right:6px;"></i> Bofa Road,
-                    Kilifi Kenya</p>
-                <p><i class="far fa-envelope" style="color:var(--orange);margin-right:6px;"></i>
-                    hello@saviranest.co.ke</p>
             </div>
             <div class="footer-col">
                 <h5>Policies</h5>
@@ -28,11 +24,17 @@
                 <a href="#" data-bs-toggle="modal" data-bs-target="#cookieModal">Cookie Policy</a>
                 <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#bookingModal">Booking Terms</a>-->
             </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <p><i class="fas fa-phone-alt"></i> +254 712 345 678</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bofa Road, Kilifi Kenya</p>
+                <p><i class="far fa-envelope"></i> info@saviranest.co.ke</p>
+                <p><i class="far fa-envelope"></i> bookings@saviranest.co.ke</p>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>© 2026 SaviraNest — Your nest away from home. Crafted for Stays, Journeys, & Experiences..</p>
-            <p>Kilifi, Kenya 🌊</p>
-            <p>Design By: <strong>LacomasTech</strong>.</p>
+            <p>Design By: <strong>LacomasTech</strong> | Kilifi, Kenya</p>
         </div>
     </div>
 </footer>
@@ -42,7 +44,8 @@
 <!-- Offcanvas Mobile Menu -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileOffcanvas">
     <div class="offcanvas-header">
-        <img src="{{ asset('assets/image/savira_nest_logo.webp') }}" alt="SaviraNest" class="offcanvas-logo" style="height: 60px;">
+        <img src="{{ asset('assets/image/savira_nest_logo.webp') }}" alt="SaviraNest" class="offcanvas-logo"
+            style="height: 60px;">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
@@ -51,22 +54,23 @@
                         class="fas fa-home"></i> Home</a> </li>
             <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}"><i
                         class="fas fa-info-circle"></i> About</a></li>
-            <li><a class="{{ request()->routeIs('stays') ? 'active' : '' }}" href="{{ route('stays') }}"><i
-                        class="fas fa-hotel"></i> Stays</a></li>
-            <li><a class="{{ request()->routeIs('experiences') ? 'active' : '' }}" href="{{ route('experiences') }}"><i
-                        class="fas fa-water"></i> Experiences</a></li>
+            <li><a class="{{ request()->routeIs('stays', 'staydetails', 'accdetails') ? 'active' : '' }}"
+                    href="{{ route('stays') }}"><i class="fas fa-hotel"></i> Stays</a></li>
+            <li><a class="{{ request()->routeIs('experiences', 'expdetails') ? 'active' : '' }}"
+                    href="{{ route('experiences') }}"><i class="fas fa-water"></i> Experiences</a></li>
             <li><a class="{{ request()->routeIs('pricing') ? 'active' : '' }}" href="{{ route('pricing') }}"><i
                         class="fas fa-tag"></i> Pricing</a></li>
             <li><a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}"><i
                         class="fas fa-envelope"></i> Contact</a></li>
         </ul>
         <div class="mobile-action-buttons">
-            <a href="{{ route('signin') }}" class="btn-mobile-book"><i class="fas fa-user"></i> Login / Sign Up</a>
+            <a href="{{ route('login') }}" class="btn-mobile-book"><i class="fas fa-user"></i> Login / Sign Up</a>
         </div>
         <div class="mobile-contact-info">
             <p><i class="fas fa-phone-alt"></i> +254 712 345 678</p>
             <p><i class="fas fa-map-marker-alt"></i> Bofa Road, Kilifi, Kenya</p>
             <p><i class="far fa-envelope"></i> info@saviranest.co.ke</p>
+            <p><i class="far fa-envelope"></i> bookings@saviranest.co.ke</p>
             <div class="mobile-social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -199,8 +203,8 @@
                 <p>For privacy-related enquiries or to exercise your rights, please contact our Data Protection
                     Officer:</p>
                 <ul>
-                    <li>Email: <a href="mailto:privacy@saviranest.com">privacy@saviranest.com</a></li>
-                    <li>Support: <a href="mailto:support@saviranest.com">support@saviranest.com</a></li>
+                    <li>Email: <a href="mailto:privacy@saviranest.co.ke">privacy@saviranest.co.ke</a></li>
+                    <li>Support: <a href="mailto:support@saviranest.co.ke">support@saviranest.co.ke</a></li>
                 </ul>
 
                 <div class="alert alert-info mt-4">
@@ -449,7 +453,7 @@
 
                 <div class="alert alert-info mt-4">
                     If you have any questions about your specific booking's cancellation terms, please contact our
-                    support team at <a href="mailto:support@saviranest.com">support@saviranest.com</a> before
+                    support team at <a href="mailto:support@saviranest.co.ke">support@saviranest.co.ke</a> before
                     cancelling.
                 </div>
             </div>
@@ -557,8 +561,8 @@
                 <h3 class="h6 mt-4">8. Contact Us</h3>
                 <p>If you have any questions about our use of cookies or this policy, please get in touch:</p>
                 <ul>
-                    <li>Email: <a href="mailto:privacy@saviranest.com">privacy@saviranest.com</a></li>
-                    <li>Support: <a href="mailto:support@saviranest.com">support@saviranest.com</a></li>
+                    <li>Email: <a href="mailto:privacy@saviranest.co.ke">privacy@saviranest.co.ke</a></li>
+                    <li>Support: <a href="mailto:support@saviranest.co.ke">support@saviranest.co.ke</a></li>
                 </ul>
 
                 <div class="alert alert-info mt-4">

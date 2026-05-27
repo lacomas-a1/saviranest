@@ -92,6 +92,15 @@ function filterExperiences(category) {
     });
 }
 
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const category = btn.getAttribute('data-filter');
+        filterExperiences(category);
+    });
+});
+
 // Category filtering
 const btns = document.querySelectorAll('.filter-btn');
 const items = document.querySelectorAll('.vehicle-item');
@@ -106,17 +115,18 @@ btns.forEach(btn => {
     });
 });
 
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const category = btn.getAttribute('data-filter');
-        filterExperiences(category);
-    });
-});
+// filterButtons.forEach(btn => {
+//     btn.addEventListener('click', () => {
+//         filterButtons.forEach(b => b.classList.remove('active'));
+//         btn.classList.add('active');
+//         const category = btn.getAttribute('data-filter');
+//         filterExperiences(category);
+//     });
+// });
 
 // Category filtering
-// const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButton = document.querySelectorAll('.filter-btns');
+
 const accommodationItems = document.querySelectorAll('.accommodation-item');
 function filterAccommodations(category) {
     accommodationItems.forEach(item => {
@@ -127,6 +137,15 @@ function filterAccommodations(category) {
         }
     });
 }
+
+filterButton.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterButton.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const category = btn.getAttribute('data-filter');
+        filterAccommodations(category);
+    });
+});
 
 // const filterBtns = document.querySelectorAll('.filter-btn');
 const rentalItems = document.querySelectorAll('.rental-item');

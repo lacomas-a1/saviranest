@@ -12,7 +12,7 @@ class StoreGalleryRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,11 @@ class StoreGalleryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'images' => 'required|array',
+            'images.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048',
+
+            'stay_id' => 'nullable|exists:stays,id',
+            'exps_id' => 'nullable|exists:experiences,id',
         ];
     }
 }

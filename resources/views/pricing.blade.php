@@ -235,8 +235,9 @@
                     style="font-size: 2.5rem; color: var(--sunrise-gold); margin-bottom: 12px; display: inline-block;"></i>
                 <h3 style="font-size: 1.8rem; margin-bottom: 12px;">Ready to Share Your Nest?</h3>
                 <p>Join SaviraNest and welcome travelers from around the world. Start earning today.</p>
-                <button class="btn-large" onclick="alert('✨ Thank you! Our team will reach out within 24 hours.')">Become
-                    a Host →</button>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="{{ route('contact') }}" class="btn-hero-outline">Become a Host →</a>
+                </div>
             </div>
         </div>
     </main>

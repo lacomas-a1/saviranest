@@ -12,7 +12,7 @@ class StoreTransactionsRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,8 +22,21 @@ class StoreTransactionsRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+       return [
+            'book_ref' => 'required|string|max:100',
+            'amount' => 'required|numeric|min:0',
+
+            'status' => 'nullable|string|max:50',
+
+            'transaction_id' => 'nullable|string|max:255',
+
+            'guest_name' => 'required|string|max:255',
+
+            'payment_method' => 'required|string|max:50',
+
+            'payment_date' => 'nullable|date',
+
+            'booking_id' => 'required|exists:bookings,id',
         ];
     }
 }

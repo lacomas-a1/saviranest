@@ -12,7 +12,7 @@ class StoreInformationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,12 @@ class StoreInformationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'informations' => 'required|array',
+
+            'informations.*.title' => 'required|string|max:255',
+            'informations.*.description' => 'nullable|string',
+
+            'exps_id' => 'required|exists:experiences,id',
         ];
     }
 }

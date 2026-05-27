@@ -23,7 +23,7 @@
                         </ul>
                     </div>
                     <div class="nav-right">
-                        <a href="{{ route('signin') }}" class="btn-primary-travel">Login / Sign Up</a>
+                        <a href="{{ route('login') }}" class="btn-primary-travel">Login / Sign Up</a>
                     </div>
                     <button class="mobile-menu-toggle" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#mobileOffcanvas">

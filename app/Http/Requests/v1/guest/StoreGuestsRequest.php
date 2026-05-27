@@ -12,7 +12,7 @@ class StoreGuestsRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,20 @@ class StoreGuestsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'required|string|max:20',
+
+            // 'stays' => 'nullable|integer',
+            // 'experiences' => 'nullable|integer',
+
+            'gender' => 'nullable|string|max:20',
+            'nationality' => 'nullable|string|max:100',
+
+            'country' => 'nullable|string|max:100',
+            'city' => 'nullable|string|max:100',
+            'location' => 'nullable|string|max:255',
+            'address' => 'nullable|string|max:255',
         ];
     }
 }

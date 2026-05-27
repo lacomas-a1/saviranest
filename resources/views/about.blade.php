@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format"
+                        <img src="{{ asset('assets/image/about-us.jpg') }}"
                             alt="Luxury home" class="rounded-3xl shadow-2xl">
                     </div>
                 </div>
@@ -216,8 +216,9 @@
                     style="font-size: 2.5rem; color: var(--sunrise-gold); margin-bottom: 12px; display: inline-block;"></i>
                 <h3 style="font-size: 1.8rem; margin-bottom: 12px;">Join the Nest Community</h3>
                 <p>Get exclusive offers, new stay alerts, and travel inspiration straight to your inbox.</p>
-                <button class="btn-large" onclick="alert('✨ Thank you! We’ll send you dreamy destinations.')">Subscribe
-                    →</button>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="{{ route('contact') }}" class="btn-hero-outline">Subscribe →</a>
+                </div>
             </div>
         </div>
     </main>

@@ -40,7 +40,7 @@
                 <div class="info-card">
                     <div class="info-icon"><i class="fas fa-envelope"></i></div>
                     <h3>Email Us</h3>
-                    <p><a href="mailto:hello@saviranest.co.ke">hello@saviranest.co.ke</a></p>
+                    <p><a href="mailto:info@saviranest.co.ke">info@saviranest.co.ke</a></p>
                     <p><a href="mailto:bookings@saviranest.co.ke">bookings@saviranest.co.ke</a></p>
                 </div>
                 <!-- Call Us -->

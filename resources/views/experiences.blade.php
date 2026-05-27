@@ -235,15 +235,20 @@
 
         <!-- CTA Banner -->
         <div class="container">
-            <div class="cta-banner fade-up"
-                style="background: linear-gradient(135deg, var(--deep-navy), #1a3a60); border-radius: 48px; padding: 56px 40px; margin: 60px auto; text-align: center; color: white;">
+            <div class="cta-banner fade-up">
                 <i class="fas fa-map-marked-alt"
                     style="font-size: 2.5rem; color: var(--sunrise-gold); margin-bottom: 12px; display: inline-block;"></i>
-                <h3 style="font-size: 1.8rem; margin-bottom: 12px;">Curate Your Own Adventure</h3>
-                <p>Mix and match experiences to create your perfect itinerary. Our travel concierge is here to help.</p>
-                <button class="btn-large"
-                    style="background: var(--sunrise-gold); color: var(--deep-navy); padding: 14px 36px; border-radius: 60px; font-weight: 700; border: none; margin-top: 20px;"
-                    onclick="alert('✨ Contact our concierge: hello@saviranest.co.ke')">Plan My Trip →</button>
+                <h3 style="font-size: 1.8rem; margin-bottom: 12px;">
+                    Curate Your Own Adventure
+                </h3>
+                <p style="max-width: 500px; margin: 0 auto 20px;">
+                    Mix and match experiences to create your perfect itinerary. Our travel concierge is here to help.
+                </p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wildnomads.co.ke/tour" target="_blank" class="btn-hero-outline">Explore Tours</a>
+                    <a href="https://wildnomads.co.ke/contact" target="_blank"  class="btn-hero-primary">Plan My Trip →</a>
+                </div>
+
             </div>
         </div>
     </main>

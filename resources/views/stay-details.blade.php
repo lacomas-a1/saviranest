@@ -366,9 +366,6 @@
                                 </div>
                                 <p>Absolutely stunning!</p>
                                 <div class="admin-reply"><strong>Resort Manager:</strong><br>Thank you James!</div>
-                                <div class="reply-form"><input type="text" class="reply-input"
-                                        placeholder="Write a reply..."><button class="reply-btn"
-                                        onclick="replyToReview(this)">Reply</button></div>
                             </div>
                         </div>
                         <div class="add-review-form">

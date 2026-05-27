@@ -12,7 +12,7 @@ class StoreHighlightRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,20 @@ class StoreHighlightRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            // 'title' => 'required|string|max:255',
+            // 'icon' => 'required|string|max:255',
+            // 'description' => 'nullable|string|max:1000',
+
+            // 'is_active' => 'nullable|boolean',
+            // 'sort_order' => 'nullable|integer|min:0',
+            'highlights' => 'nullable|array',
+            'highlights.*.title' => 'nullable|string|max:255',
+            'highlights.*.icon' => 'nullable|string|max:255',
+            'highlights.*.description' => 'nullable|string',
+
+            'stay_id' => 'nullable|exists:stays,id',
+            'exps_id' => 'nullable|exists:experiences,id',
+            'room_id' => 'nullable|exists:rooms,id',
         ];
     }
 }

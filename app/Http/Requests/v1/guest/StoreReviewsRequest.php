@@ -12,7 +12,7 @@ class StoreReviewsRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,19 @@ class StoreReviewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'reviewer_name' => 'required|string|max:255',
+            'reviewer_email' => 'nullable|email|max:255',
+
+            'rating' => 'required|numeric|min:1|max:5',
+            'review' => 'required|string|max:2000',
+
+            'reply' => 'nullable|string|max:2000',
+            'admin_name' => 'nullable|string|max:255',
+
+            'is_approved' => 'nullable|boolean',
+
+            'stay_id' => 'nullable|exists:stays,id',
+            'exps_id' => 'nullable|exists:experiences,id',
         ];
     }
 }

@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('amenities', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
+            $table->string('title');
+            $table->string('icon');
+            $table->string('description');
+            $table->integer('sort_order')->default(0);
+            $table->boolean('is_active')->default(true);
+            $table->string('stay_id');
+            $table->foreign('stay_id')->references('id')->on('stays')->onDelete('cascade');
             $table->timestamps();
         });
     }

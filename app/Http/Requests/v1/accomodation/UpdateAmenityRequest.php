@@ -12,7 +12,7 @@ class UpdateAmenityRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,8 +22,22 @@ class UpdateAmenityRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        $method = $this->method();
+
+        if ($method == 'PUT') {
+            return [
+                'name' => 'required|string|max:255',
+                'icon' => 'required|string|max:255',
+                'category' => 'required|string|max:255',
+                'description' => 'required|string|max:255',
+            ];
+        } else {
+            return [
+                'name' => 'sometimes|required|string|max:255',
+                'icon' => 'sometimes|required|string|max:255',
+                'category' => 'sometimes|required|string|max:255',
+                'description' => 'sometimes|required|string|max:255',
+            ];
+        }
     }
 }

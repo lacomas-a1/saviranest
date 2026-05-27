@@ -12,7 +12,7 @@ class StoreAmenityRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,15 @@ class StoreAmenityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            // 'title' => 'required|string|max:255',
+            // 'icon' => 'required|string|max:255',
+            // 'category' => 'required|string|max:255',
+            // 'description' => 'required|string|max:255',
+            'stay_id' => 'required|exists:stays,id',
+            'amenities' => 'nullable|array',
+            'amenities.*.title' => 'nullable|string',
+            'amenities.*.icon' => 'nullable|string',
+            'amenities.*.description' => 'nullable|string',
         ];
     }
 }

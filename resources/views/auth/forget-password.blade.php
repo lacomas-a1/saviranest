@@ -4,6 +4,23 @@
 
 @section('content')
     <div class="right-side">
+        @if (session('success') || session('error'))
+            <div class="mb-4">
+
+                @if (session('success'))
+                    <div class="alert alert-success mb-2">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger mb-2">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+            </div>
+        @endif
         <div class="form-card p-6 fade-in">
             <div class="text-center mb-2">
                 <i class="fas fa-key text-orange-400 text-3xl mb-2"></i>
@@ -26,7 +43,7 @@
                 <div class="success-msg" id="successMsg"><i class="fas fa-check-circle mr-1"></i> Reset link sent!
                     Check your email.</div>
                 <div class="text-center mt-5 text-xs text-gray-400">
-                    Remember your password? <a href="{{ route('signin') }}" class="text-orange-400 hover:underline">Back to
+                    Remember your password? <a href="{{ route('login') }}" class="text-orange-400 hover:underline">Back to
                         Login</a>
                 </div>
             </form>

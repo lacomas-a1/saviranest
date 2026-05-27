@@ -28,10 +28,13 @@
     <!-- Category Filter & Cards (unchanged) -->
     <div class="container">
         <div class="category-bar">
-            <button class="filter-btn active" data-filter="all">All Stays</button>
-            <button class="filter-btn" data-filter="coast">Coast / Beach</button>
-            <button class="filter-btn" data-filter="safari">Safari Lodges</button>
-            <button class="filter-btn" data-filter="lake">Lake & Highlands</button>
+            <button class="filter-btns active" data-filter="all">All Stays</button>
+            <button class="filter-btns" data-filter="coast">Coast / Beach Villas</button>
+            {{-- <button class="filter-btns" data-filter="coast">Ocean Retreats</button> --}}
+            <button class="filter-btns" data-filter="safari">Safari Lodges</button>
+            {{-- <button class="filter-btns" data-filter="romantic">Romantic Escapes</button> --}}
+            <button class="filter-btns" data-filter="family">Family Homes</button>
+            <button class="filter-btns" data-filter="luxury">Luxury Apartments</button>
         </div>
     </div>
 
@@ -63,70 +66,6 @@
                             <div class="card-buttons"><a href="{{ route('staydetails') }}" class="btn btn-outline-accent"><i
                                         class="fas fa-info-circle"></i> Details</a><a
                                     href="https://wa.me/254700123456?text=I'm%20interested%20in%20Watamu%20Beach%20Resort"
-                                    target="_blank" class="btn btn-inquire"><i class="fab fa-whatsapp"></i> Inquire</a>
-                            </div>
-                            <div class="mt-2">
-                                <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 - Diani Reef Beach Resort (coast) -->
-                <div class="col-lg-4 col-md-6 accommodation-item" data-category="coast">
-                    <div class="accommodation-card">
-                        <div class="img-holder"><img
-                                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&w=600&h=400&fit=crop"
-                                class="card-img-top" alt="Diani Reef Beach Resort"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Diani Reef Beach Resort</h5>
-                            <div class="location-text"><i class="fas fa-map-marker-alt"
-                                    style="color: var(--sunrise-gold);"></i> Diani Beach, South Coast</div>
-                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
-                                    class="ms-1 small text-muted">(4.8)</span></div>
-                            <p class="desc-text">Luxury villas with private plunge pools & premier diving center.
-                                All-inclusive available.</p>
-                            <div class="amenities-list">
-                                <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
-                                <span class="amenity-tag"><i class="fas fa-hot-tub"></i> Plunge pool</span>
-                                <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
-                            </div>
-                            <div class="price-block">KES 12,000 / night</div>
-                            <div class="card-buttons"><a href="{{ route('staydetails') }}" class="btn btn-outline-accent"><i
-                                        class="fas fa-info-circle"></i> Details</a><a
-                                    href="https://wa.me/254700123456?text=I'm%20interested%20in%20Diani%20Reef%20Beach%20Resort"
-                                    target="_blank" class="btn btn-inquire"><i class="fab fa-whatsapp"></i> Inquire</a>
-                            </div>
-                            <div class="mt-2">
-                                <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 - Sarova Whitesands (coast) -->
-                <div class="col-lg-4 col-md-6 accommodation-item" data-category="coast">
-                    <div class="accommodation-card">
-                        <div class="img-holder"><img
-                                src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&w=600&h=400&fit=crop"
-                                class="card-img-top" alt="Sarova Whitesands Beach Resort"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Sarova Whitesands Beach Resort</h5>
-                            <div class="location-text"><i class="fas fa-map-marker-alt"
-                                    style="color: var(--sunrise-gold);"></i> Bamburi, Mombasa</div>
-                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span
-                                    class="ms-1 small text-muted">(4.4)</span></div>
-                            <p class="desc-text">Five pools, lush gardens, multiple restaurants on a white-sand beach.
-                                Family-friendly.</p>
-                            <div class="amenities-list">
-                                <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
-                                <span class="amenity-tag"><i class="fas fa-hot-tub"></i> Plunge pool</span>
-                                <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
-                            </div>
-                            <div class="price-block">KES 10,500 / night</div>
-                            <div class="card-buttons"><a href="{{ route('staydetails') }}"
-                                    class="btn btn-outline-accent"><i class="fas fa-info-circle"></i> Details</a><a
-                                    href="https://wa.me/254700123456?text=I'm%20interested%20in%20Sarova%20Whitesands"
                                     target="_blank" class="btn btn-inquire"><i class="fab fa-whatsapp"></i> Inquire</a>
                             </div>
                             <div class="mt-2">
@@ -242,7 +181,7 @@
                     </div>
                 </div>
                 <!-- Card - Deluxe Ocean View Room -->
-                <div class="col-lg-4 col-md-6 accommodation-item" data-category="coast">
+                <div class="col-lg-4 col-md-6 accommodation-item" data-category="safari">
                     <div class="accommodation-card">
 
                         <div class="img-holder">

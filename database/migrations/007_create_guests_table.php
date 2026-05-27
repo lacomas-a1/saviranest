@@ -12,7 +12,23 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('guests', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->integer('stays')->default(0);
+            $table->integer('experiences')->default(0);
+            $table->string('phone')->nullable();
+
+            $table->string('gender')->nullable();
+            $table->string('nationality')->nullable();
+
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+            $table->string('location')->nullable();
+            $table->text('address')->nullable();
+
+            $table->string('business_id');
+            $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

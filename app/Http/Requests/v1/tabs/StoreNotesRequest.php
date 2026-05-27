@@ -12,7 +12,7 @@ class StoreNotesRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,17 @@ class StoreNotesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            // 'title' => 'required|string|max:255',
+            // 'description' => 'nullable|array',
+            // 'description.*' => 'nullable|string|max:255',
+            // 'description' => 'nullable|string|max:2000',
+
+            'exps_id' => 'required|exists:experiences,id',
+            'notes' => 'nullable|array',
+            'notes.*.title' => 'nullable|string',
+            'notes.*.description' => 'nullable|string',
+
+            // 'sort_order' => 'nullable|integer|min:0',
         ];
     }
 }

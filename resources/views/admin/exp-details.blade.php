@@ -19,7 +19,12 @@
         <div class="card-section">
             <div class="card-header-custom">
                 <h3><i class="fas fa-star text-warning me-2"></i> Highlights</h3>
-                <span class="btn-sm-outline">+ Add Highlight</span>
+                {{-- <span class="btn-sm-outline">+ Add Highlight</span> --}}
+                <a href="#" class="btn-sm-outline open-highlights" data-exps-id="{{ $exps->id }}"
+                    data-bs-toggle="modal" data-bs-target="#addHighlightModal">
+                    + Add Highlight &nbsp;
+                </a>
+
             </div>
             <div class="table-responsive">
                 <table class="data-table">
@@ -73,7 +78,11 @@
         <div class="card-section">
             <div class="card-header-custom">
                 <h3><i class="fas fa-images me-2 text-info"></i> Gallery Images</h3>
-                <span class="btn-sm-outline">+ Add Image</span>
+                {{-- <span class="btn-sm-outline"></span> --}}
+                <a href="#" class="btn-sm-outline open-images" data-exps-id="{{ $exps->id }}"
+                    data-bs-toggle="modal" data-bs-target="#addGalleryModal">
+                    + Add Image &nbsp;
+                </a>
             </div>
             <div class="table-responsive">
                 <table class="data-table">
@@ -118,7 +127,11 @@
         <div class="card-section">
             <div class="card-header-custom">
                 <h3><i class="fas fa-list-ol me-2 text-primary"></i> Itinerary Steps</h3>
-                <span class="btn-sm-outline">+ Add Step</span>
+                {{-- <span class="btn-sm-outline">+ Add Step</span> --}}
+                <a href="#" class="btn-sm-outline open-itenary" data-exps-id="{{ $exps->id }}"
+                    data-bs-toggle="modal" data-bs-target="#addExperienceItineraryModal">
+                    + Add Step &nbsp;
+                </a>
             </div>
             <div class="table-responsive">
                 <table class="data-table">
@@ -180,7 +193,11 @@
         <div class="card-section">
             <div class="card-header-custom">
                 <h3><i class="fas fa-clipboard-list me-2 text-warning"></i> Important Notes</h3>
-                <span class="btn-sm-outline">+ Add Note</span>
+                {{-- <span class="btn-sm-outline">+ Add Note</span> --}}
+                <a href="#" class="btn-sm-outline open-notes" data-exps-id="{{ $exps->id }}"
+                    data-bs-toggle="modal" data-bs-target="#addNoteModal">
+                    + Add Note &nbsp;
+                </a>
             </div>
             <div class="table-responsive">
                 <table class="data-table">
@@ -241,7 +258,11 @@
         <div class="card-section">
             <div class="card-header-custom">
                 <h3><i class="fas fa-map-marker-alt me-2 text-danger"></i> Meeting Point Information</h3>
-                <span class="btn-sm-outline">Edit Details</span>
+                {{-- <span class="btn-sm-outline">Edit Details</span> --}}
+                <a href="#" class="btn-sm-outline open-info" data-exps-id="{{ $exps->id }}"
+                    data-bs-toggle="modal" data-bs-target="#addInformationModal">
+                    + Important Info &nbsp;
+                </a>
             </div>
             <div class="meeting-point-card">
                 <div class="meeting-info">
@@ -255,4 +276,27 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).on('click', '.open-highlights', function() {
+            $('#experienceHighlightId').val($(this).data('exps-id'));
+        });
+
+        $(document).on('click', '.open-info', function() {
+            $('#experienceInfoId').val($(this).data('exps-id'));
+        });
+
+        $(document).on('click', '.open-notes', function() {
+            $('#experienceNotesId').val($(this).data('exps-id'));
+        });
+
+        $(document).on('click', '.open-images', function() {
+            $('#experienceGalleryId').val($(this).data('exps-id'));
+        });
+
+        $(document).on('click', '.open-itenary', function() {
+            $('#experienceItenaryId').val($(this).data('exps-id'));
+        });
+    </script>
+
 @endsection

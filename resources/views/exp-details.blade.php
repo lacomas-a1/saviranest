@@ -259,9 +259,6 @@
                                     was the cherry on top.</p>
                                 <div class="admin-reply"><strong>Tour Operator:</strong><br>Thank you Lena! We're
                                     delighted you had such a wonderful encounter.</div>
-                                <div class="reply-form"><input type="text" class="reply-input"
-                                        placeholder="Write a reply..."><button class="reply-btn"
-                                        onclick="replyToReview(this)">Reply</button></div>
                             </div>
                             <div class="review-card">
                                 <div class="review-header d-flex justify-content-between"><strong>David & Anne
@@ -274,9 +271,6 @@
                                     the boat. Snorkeling gear was clean and new. The crew was very friendly.</p>
                                 <div class="admin-reply"><strong>Tour Operator:</strong><br>Asante sana! We always
                                     respect the animals' space, but we're glad you enjoyed the reefs and service.</div>
-                                <div class="reply-form"><input type="text" class="reply-input"
-                                        placeholder="Write a reply..."><button class="reply-btn"
-                                        onclick="replyToReview(this)">Reply</button></div>
                             </div>
                         </div>
                         <div class="add-review-form mt-5">
