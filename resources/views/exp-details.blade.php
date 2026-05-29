@@ -20,8 +20,8 @@
         @include('helper.nav')
 
         <div class="hero-content container">
-            <h1 class="hero-title">Snorkeling & Dolphin Watch</h1>
-            <p class="hero-subtitle">Explore coral gardens · Swim with wild dolphins · Sandbank picnic</p>
+            <h1 class="hero-title">{{ $experience->title }}</h1>
+            <p class="hero-subtitle">{{ $experience->tagline }}</p>
         </div>
     </header>
 
@@ -29,22 +29,28 @@
         <div class="container">
             <div class="resort-card fade-up">
                 <div class="position-relative">
-                    <div class="tour-badge"><i class="fas fa-fish me-1"></i> Marine Adventure</div>
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=500&fit=crop"
-                        alt="Snorkeling Watamu" class="tour-image">
+                    <div class="tour-badge"> {{ ucfirst($experience->category) }} Adventure</div>
+                    @if ($experience->image_url)
+                        <img src="{{ asset('storage/' . $experience->image_url) }}" alt="{{ $experience->slug }} image"
+                            class="tour-image">
+                    @else
+                        <img src="{{ asset('assets/image/no-image.webp') }}" alt="No Image" class="tour-image">
+                    @endif
                 </div>
                 <div class="p-4 p-lg-3">
                     <!-- Compact Action Bar -->
                     <div class="compact-action-bar">
                         <div class="d-flex flex-wrap gap-2">
-                            <span class="action-badge"><i class="fas fa-tag"></i> KES 4,200 / person</span>
-                            <span class="action-badge"><i class="fas fa-clock"></i> 4 hours</span>
-                            <span class="action-badge"><i class="fas fa-star"></i> 4.9/5 Rating</span>
+                            <span class="action-badge"><i class="fas fa-tag"></i> {{ $experience->currency }}
+                                {{ $experience->price }} Per Person</span>
+                            <span class="action-badge"><i class="fas fa-clock"></i> {{ $experience->duration }}</span>
+                            <span class="action-badge"><i class="fas fa-star"></i> {{ $experience->rating }}/5
+                                Rating</span>
                         </div>
                         <div class="d-flex flex-wrap gap-2">
-                            <a href="booking.html" class="compact-btn compact-btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#bookingModal"><i class="fas fa-calendar-check"></i> Book Now</a>
-                            <a href="https://wa.me/254712345678?text=I'm%20interested%20in%20Snorkeling%20%26%20Dolphin%20Watch"
+                            <a href=" " class="compact-btn compact-btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#bookingModal"><i class="fas fa-ticket-alt"></i> Book Now</a>
+                            <a href="https://wa.me/254102593346?text={{ urlencode("I'm interested in " . $experience->title) }}"
                                 target="_blank" class="compact-btn compact-btn-whatsapp"><i class="fab fa-whatsapp"></i>
                                 WhatsApp</a>
                         </div>
@@ -66,12 +72,10 @@
 
                     <!-- Overview Tab -->
                     <div id="overview" class="tab-pane active">
-                        <h2 class="mb-3">Snorkeling & Dolphin Watch – Watamu Marine Park</h2>
+                        <h2 class="mb-3">{{ $experience->title }} – {{ $experience->location }}</h2>
                         <div class="row mb-4">
                             <div class="col-md-12">
-                                <p class="lead">Embark on a 4‑hour ocean safari to the pristine waters of Watamu Marine
-                                    National Park. Snorkel over kaleidoscopic coral reefs, swim alongside wild
-                                    bottlenose dolphins, and relax on a secluded sandbank with a tropical picnic.</p>
+                                <p class="lead">{{ $experience->description }}</p>
                             </div>
                         </div>
                         <h3>Experience Highlights</h3>
@@ -107,9 +111,7 @@
                                 <p>Comfortable 12‑seater, toilet & fresh water rinse</p>
                             </div>
                         </div>
-                        <p>Led by certified marine guides, this tour combines adventure with conservation. We follow
-                            strict dolphin‑watching ethics (no chasing, safe distance) and support local reef protection
-                            initiatives. Suitable for beginners and experienced snorkelers alike.</p>
+                        <p>{{ $experience->excerpt }}</p>
                     </div>
 
                     <!-- Itinerary Tab -->
@@ -260,18 +262,6 @@
                                 <div class="admin-reply"><strong>Tour Operator:</strong><br>Thank you Lena! We're
                                     delighted you had such a wonderful encounter.</div>
                             </div>
-                            <div class="review-card">
-                                <div class="review-header d-flex justify-content-between"><strong>David & Anne
-                                        Mwangi</strong><span>January 2026</span></div>
-                                <div class="review-rating"><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star text-warning"></i><i
-                                        class="fas fa-star-half-alt text-warning"></i></div>
-                                <p>Great value for money. Saw dolphins but they were shy – still amazing to watch from
-                                    the boat. Snorkeling gear was clean and new. The crew was very friendly.</p>
-                                <div class="admin-reply"><strong>Tour Operator:</strong><br>Asante sana! We always
-                                    respect the animals' space, but we're glad you enjoyed the reefs and service.</div>
-                            </div>
                         </div>
                         <div class="add-review-form mt-5">
                             <h5>Add Your Review</h5>
@@ -283,8 +273,9 @@
                                         <option value="4">★★★★☆ (4)</option>
                                         <option value="3">★★★☆☆ (3)</option>
                                     </select></div>
-                                <div class="col-12"><textarea id="reviewText" class="form-control" rows="3"
-                                        placeholder="Write your review..."></textarea></div>
+                                <div class="col-12">
+                                    <textarea id="reviewText" class="form-control" rows="3" placeholder="Write your review..."></textarea>
+                                </div>
                                 <div class="col-12"><button class="btn btn-primary"
                                         style="background:var(--support-green)" onclick="addNewReview()">Submit
                                         Review</button></div>

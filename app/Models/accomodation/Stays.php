@@ -21,6 +21,7 @@ class Stays extends Model
     protected $fillable = [
         'title',
         'slug',
+        'tagline',
         'category',
         'location',
         'image_url',

@@ -22,6 +22,7 @@ class Experience extends Model
     protected $fillable = [
         'title',
         'slug',
+        'tagline',
         'category',
         'location',
         'meeting_point',

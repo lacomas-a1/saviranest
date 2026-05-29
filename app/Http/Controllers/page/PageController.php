@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\page;
 
 use App\Http\Controllers\Controller;
+use App\Models\accomodation\Stays;
+use App\Models\experience\Experience;
+use App\Models\tabs\Gallery;
+use App\Models\tabs\Highlight;
 
 class PageController extends Controller
 {
@@ -15,8 +19,10 @@ class PageController extends Controller
             'image' => asset('assets/image/favicon.ico'),
             'type' => 'website',
         ];
+        $experiences = Experience::where('is_featured', true)->where('is_available', true)->orderBy('created_at', 'desc')->get();
+        $stays = Stays::where('is_featured', true)->where('is_available', true)->orderBy('created_at', 'desc')->get();
 
-        return view('home', compact('seo'));
+        return view('home', compact('seo', 'stays', 'experiences'));
     }
 
     public function about()
@@ -42,7 +48,39 @@ class PageController extends Controller
             'type' => 'website',
         ];
 
-        return view('stays', compact('seo'));
+        $stays = Stays::where('is_available', true)->orderBy('created_at', 'desc')->get();
+
+        return view('stays', compact('seo', 'stays'));
+    }
+
+    public function viewStay($id)
+    {
+        session(['selected_stay_id' => $id]);
+
+        return redirect()->route('staydetails');
+    }
+
+    public function staydetails()
+    {
+        $seo = [
+            'title' => 'Luxury Accommodations & Beach Resorts in Kenya | SaviraNest',
+            'description' => 'Explore handpicked luxury accommodations including beach resorts, villas, safari lodges, apartments, and oceanfront retreats across Kenya.',
+            'keywords' => 'Kenya accommodation, luxury resorts Kenya, beach villas Kenya, Watamu hotels, Diani resorts, Kilifi stays, luxury apartments Nairobi, boutique hotels Kenya, beachfront stays Africa, safari camps Kenya, holiday rentals Kenya',
+            'image' => asset('assets/image/favicon.ico'),
+            'type' => 'website',
+        ];
+
+        $stayId = session('selected_stay_id');
+
+        if (! $stayId) {
+            return redirect()->route('stays')->with('error', 'No Stay Selected.');
+        }
+
+        $stay = Stays::findOrFail($stayId);
+        $highlights = Highlight::where('stay_id', $stayId)->get();
+        $galleries = Gallery::where('stay_id', $stayId)->get();
+
+        return view('stay-details', compact('seo', 'stay', 'highlights', 'galleries'));
     }
 
     public function experiences()
@@ -55,7 +93,37 @@ class PageController extends Controller
             'type' => 'website',
         ];
 
-        return view('experiences', compact('seo'));
+        $experiences = Experience::where('is_available', true)->orderBy('created_at', 'desc')->get();
+
+        return view('experiences', compact('seo', 'experiences'));
+    }
+
+    public function viewExperience($id)
+    {
+        session(['selected_exp_id' => $id]);
+
+        return redirect()->route('expdetails');
+    }
+
+    public function expdetails()
+    {
+        $seo = [
+            'title' => 'Snorkeling & Dolphin Watch in Watamu | SaviraNest',
+            'description' => 'Enjoy snorkeling, dolphin watching, coral reef adventures, and sandbank picnics in Watamu. Book unforgettable ocean experiences with SaviraNest.',
+            'keywords' => 'snorkeling Watamu, dolphin watching Kenya, Watamu marine park, ocean safari Kenya, coral reef adventures, beach excursions Kenya',
+            'image' => asset('assets/image/favicon.ico'),
+            'type' => 'website',
+        ];
+
+        $expId = session('selected_exp_id');
+
+        if (! $expId) {
+            return redirect()->route('experiences')->with('error', 'No Experience Selected.');
+        }
+
+        $experience = Experience::findOrFail($expId);
+
+        return view('exp-details', compact('seo', 'experience'));
     }
 
     public function pricing()
@@ -95,32 +163,6 @@ class PageController extends Controller
         ];
 
         return view('booking', compact('seo'));
-    }
-
-    public function expdetails()
-    {
-        $seo = [
-            'title' => 'Snorkeling & Dolphin Watch in Watamu | SaviraNest',
-            'description' => 'Enjoy snorkeling, dolphin watching, coral reef adventures, and sandbank picnics in Watamu. Book unforgettable ocean experiences with SaviraNest.',
-            'keywords' => 'snorkeling Watamu, dolphin watching Kenya, Watamu marine park, ocean safari Kenya, coral reef adventures, beach excursions Kenya',
-            'image' => asset('assets/image/favicon.ico'),
-            'type' => 'website',
-        ];
-
-        return view('exp-details', compact('seo'));
-    }
-
-    public function staydetails()
-    {
-        $seo = [
-            'title' => 'Watamu Beach Resort | Luxury Oceanfront Stay in Kenya',
-            'description' => 'Experience beachfront luxury at Watamu Beach Resort with ocean views, infinity pools, spa experiences, and direct beach access.',
-            'keywords' => 'Watamu Beach Resort, oceanfront hotel Kenya, luxury resort Watamu, beachfront accommodation Kenya, Indian Ocean resorts',
-            'image' => asset('assets/image/favicon.ico'),
-            'type' => 'website',
-        ];
-
-        return view('stay-details', compact('seo'));
     }
 
     public function accdetails()

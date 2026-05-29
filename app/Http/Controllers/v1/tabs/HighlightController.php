@@ -2,31 +2,47 @@
 
 namespace App\Http\Controllers\v1\tabs;
 
-use App\Filters\v1\accomodation\HighlightFilter;
+use App\Filters\v1\tabs\HighlightFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\v1\tabs\StoreHighlightRequest;
 use App\Http\Requests\v1\tabs\UpdateHighlightRequest;
 use App\Http\Resources\v1\tabs\HighlightsCollection;
 use App\Http\Resources\v1\tabs\HighlightsResource;
 use App\Models\tabs\Highlight;
+use Illuminate\Http\Request;
 
 class HighlightController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index($request)
+    // public function index($request)
+    // {
+    //     $filter = new HighlightFilter;
+    //     $filterItems = $filter->transform($request);
+
+    //     if (count($filterItems) == 0) {
+    //         return new HighlightsCollection(Highlight::paginate());
+    //     } else {
+    //         $highlights = Highlight::where($filterItems)->paginate(5)->withQueryString();
+
+    //         return new HighlightsCollection($highlights);
+    //     }
+    // }
+    public function index(Request $request)
     {
         $filter = new HighlightFilter;
         $filterItems = $filter->transform($request);
 
         if (count($filterItems) == 0) {
             return new HighlightsCollection(Highlight::paginate());
-        } else {
-            $highlights = Highlight::where($filterItems)->paginate(5)->withQueryString();
-
-            return new HighlightsCollection($highlights);
         }
+
+        $highlights = Highlight::where($filterItems)
+            ->paginate(5)
+            ->withQueryString();
+
+        return new HighlightsCollection($highlights);
     }
 
     /**
@@ -62,30 +78,34 @@ class HighlightController extends Controller
 
             $lastOrder = $query->max('sort_order') ?? 0;
 
-            foreach ($data->highlights as $highlight) {
-
-                $feature = Highlight::create([
-                    'title' => $highlight['title'] ?? null,
-                    'icon' => $highlight['icon'] ?? null,
-                    'description' => $highlight['description'] ?? null,
-                    'sort_order' => ++$lastOrder,
-                    'is_active' => $data['is_active'] ?? true,
-                    'stay_id' => $data['stay_id'] ?? null,
-                    'exps_id' => $data['exps_id'] ?? null,
-                    'room_id' => $data['room_id'] ?? null,
-                ]);
+            if (! empty($data['highlights'])) {
+                foreach ($data['highlights'] as $highlight) {
+                    $feature = Highlight::create([
+                        'title' => $highlight['title'] ?? null,
+                        'icon' => $highlight['icon'] ?? null,
+                        'description' => $highlight['description'] ?? null,
+                        'sort_order' => ++$lastOrder,
+                        'is_active' => true,
+                        'stay_id' => $data['stay_id'] ?? null,
+                        'exps_id' => $data['exps_id'] ?? null,
+                        'room_id' => $data['room_id'] ?? null,
+                    ]);
+                }
             }
 
-            // $feature = Highlight::create([
-            //     'title' => $data['title'],
-            //     'icon' => $data['icon'],
-            //     'description' => $data['description'] ?? null,
-            //     'is_active' => $data['is_active'] ?? true,
-            //     'sort_order' => $lastOrder + 1,
-            //     'stay_id' => $data['stay_id'] ?? null,
-            //     'exps_id' => $data['exps_id'] ?? null,
-            //     'room_id' => $data['room_id'] ?? null,
-            // ]);
+            // foreach ($data->highlights as $highlight) {
+
+            //     $feature = Highlight::create([
+            //         'title' => $highlight['title'] ?? null,
+            //         'icon' => $highlight['icon'] ?? null,
+            //         'description' => $highlight['description'] ?? null,
+            //         'sort_order' => ++$lastOrder,
+            //         'is_active' => $data['is_active'] ?? true,
+            //         'stay_id' => $data['stay_id'] ?? null,
+            //         'exps_id' => $data['exps_id'] ?? null,
+            //         'room_id' => $data['room_id'] ?? null,
+            //     ]);
+            // }
 
             return response()->json([
                 'status' => true,

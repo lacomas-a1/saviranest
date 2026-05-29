@@ -26,6 +26,7 @@ class StoreExperienceRequest extends FormRequest
             'title' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255|unique:experiences,slug',
             'category' => 'required|string|max:255',
+            'tagline' => 'nullable|string|max:255',
             'location' => 'required|string|max:255',
             'meeting_point' => 'nullable|string|max:255',
             'image_url' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('id')->primary();
             $table->string('title');
             $table->string('slug')->unique();
+            $table->string('tagline')->nullable();
             $table->string('location');
             $table->string('category');
             $table->string('image_url');

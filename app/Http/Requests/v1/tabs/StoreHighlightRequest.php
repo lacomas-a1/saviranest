@@ -23,12 +23,6 @@ class StoreHighlightRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'title' => 'required|string|max:255',
-            // 'icon' => 'required|string|max:255',
-            // 'description' => 'nullable|string|max:1000',
-
-            // 'is_active' => 'nullable|boolean',
-            // 'sort_order' => 'nullable|integer|min:0',
             'highlights' => 'nullable|array',
             'highlights.*.title' => 'nullable|string|max:255',
             'highlights.*.icon' => 'nullable|string|max:255',

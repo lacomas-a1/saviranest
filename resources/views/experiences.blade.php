@@ -40,169 +40,48 @@
         <!-- Experiences Grid with data-category attributes -->
         <div class="container">
             <div class="experiences-grid fade-up" id="experiencesGrid">
-                <!-- Coastal category cards -->
-                <div class="exp-card" data-category="coastal">
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop"
-                        class="exp-img" alt="Snorkeling Watamu">
-                    <div class="exp-body">
-                        <h3 class="exp-title">Snorkeling & Dolphin Watch</h3>
-                        <div class="location-text"><i class="fas fa-map-marker-alt"
-                                style="color: var(--sunrise-gold);"></i> Diani Beach, South Coast</div>
-                        <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
-                                class="ms-1 small text-muted">(4.9)</span></div>
-                        <div class="exp-desc">Explore coral gardens, swim with dolphins, picnic on sandbank. All gear
-                            included.</div>
-                        <div class="exp-meta"><span class="exp-price">KES 4,200</span><span class="exp-duration"><i
-                                    class="far fa-clock"></i> 4 hrs</span></div>
-                        <div class="card-buttons"><a href="{{ route('expdetails') }}" class="btn btn-outline-accent"><i
-                                    class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="btn btn-inquire wa-inquire"><i class="fab fa-whatsapp"></i>
-                                Inquire</a>
-                        </div>
-                        <div class="mt-2">
-                            <a href="{{ route('booking') }}" target="_blank" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book
-                                Now →</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="exp-card" data-category="coastal">
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop"
-                        class="exp-img" alt="Sunset dhow cruise">
-                    <div class="exp-body">
-                        <h3 class="exp-title">Sunset Dhow Cruise</h3>
-                        <div class="location-text"><i class="fas fa-map-marker-alt"
-                                style="color: var(--sunrise-gold);"></i> Diani, Kilifi, Malindi, Watamu South Coast
-                        </div>
-                        <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
-                                class="ms-1 small text-muted">(4.9)</span></div>
-                        <div class="exp-desc">Sail into the Indian Ocean on a traditional dhow. Snacks, drinks, and
-                            breathtaking Kilifi sunset.</div>
-                        <div class="exp-meta"><span class="exp-price">KES 3,500</span><span class="exp-duration"><i
-                                    class="far fa-clock"></i> 2 hrs</span></div>
-                        <div class="card-buttons"><a href="exp-details.html" class="btn btn-outline-accent"><i
-                                    class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="btn btn-inquire wa-inquire"><i class="fab fa-whatsapp"></i>
-                                Inquire</a>
-                        </div>
-                        <div class="mt-2">
-                            <a href="" target="_blank" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book
-                                Now →</a>
+                @foreach ($experiences as $experience)
+                    <div class="exp-card" data-category="{{ strtolower($experience->category) }}">
+                        @if ($experience->image_url)
+                            <img src="{{ asset('storage/' . $experience->image_url) }}" alt="{{ $experience->slug }} image"
+                                class="exp-img">
+                        @else
+                            <img src="{{ asset('assets/image/no-image.webp') }}" alt="No Image" class="exp-img">
+                        @endif
+                        <div class="exp-body">
+                            <h3 class="exp-title">{{ $experience->title }}</h3>
+                            <div class="location-text"><i class="fas fa-map-marker-alt"
+                                    style="color: var(--sunrise-gold);"></i> {{ $experience->location }}</div>
+                            <div class="rating-stars">
+                                @for ($i = 1; $i <= $experience->rating; $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
+                                <span class="ms-1 small text-muted">({{ $experience->rating }})</span>
+                            </div>
+                            <div class="exp-desc">{{ $experience->description }}</div>
+                            <div class="exp-meta">
+                                <span class="exp-price">{{ $experience->currency }} {{ $experience->price }} Per Person</span>
+                                <span class="exp-duration">
+                                    <i class="far fa-clock"></i> {{ $experience->duration }}
+                                </span>
+                            </div>
+                            <div class="card-buttons">
+                                <a href="{{ route('experience.show', $experience->id) }}" class="btn btn-outline-accent">
+                                    <i class="fas fa-info-circle"></i> Details
+                                </a>
+                                <a href="https://wa.me/254102593346?text={{ urlencode("I'm interested in " . $experience->title) }}"
+                                    class="btn btn-inquire wa-inquire">
+                                    <i class="fab fa-whatsapp"></i> Inquire
+                                </a>
+                            </div>
+                            <div class="mt-2">
+                                <a href="{{ route('booking') }}" target="_blank" class="btn-exp-book"><i
+                                        class="fas fa-ticket-alt"></i> Book
+                                    Now →</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Safari category card -->
-                <div class="exp-card" data-category="safari">
-                    <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop"
-                        class="exp-img" alt="Tsavo day safari">
-                    <div class="exp-body">
-                        <h3 class="exp-title">Tsavo East Day Safari</h3>
-                        <div class="location-text"><i class="fas fa-map-marker-alt"
-                                style="color: var(--sunrise-gold);"></i> Taita Taveta, Coast</div>
-                        <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
-                                class="ms-1 small text-muted">(4.9)</span></div>
-                        <div class="exp-desc">Game drive with expert guide, picnic lunch, search for elephants, lions,
-                            and more.</div>
-                        <div class="exp-meta"><span class="exp-price">KES 12,000</span><span class="exp-duration"><i
-                                    class="far fa-clock"></i> Full day</span></div>
-                        <div class="card-buttons"><a href="exp-details.html" class="btn btn-outline-accent"><i
-                                    class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="btn btn-inquire wa-inquire"><i class="fab fa-whatsapp"></i>
-                                Inquire</a>
-                        </div>
-                        <div class="mt-2">
-                            <a href="" target="_blank" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book
-                                Now →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lifestyle & Relaxation cards -->
-                <div class="exp-card" data-category="lifestyle">
-                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&h=400&fit=crop"
-                        class="exp-img" alt="Beach yoga">
-                    <div class="exp-body">
-                        <h3 class="exp-title">Beachfront Yoga & Wellness</h3>
-                        <div class="location-text"><i class="fas fa-map-marker-alt"
-                                style="color: var(--sunrise-gold);"></i> Diani, Kilifi, Malindi, Watamu South Coast
-                        </div>
-                        <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
-                                class="ms-1 small text-muted">(4.9)</span></div>
-                        <div class="exp-desc">Morning or sunset yoga session with certified instructor. Tea and
-                            meditation included.</div>
-                        <div class="exp-meta"><span class="exp-price">KES 1,800</span><span class="exp-duration"><i
-                                    class="far fa-clock"></i> 1.5 hrs</span></div>
-                        <div class="card-buttons"><a href="exp-details.html" class="btn btn-outline-accent"><i
-                                    class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="btn btn-inquire wa-inquire"><i class="fab fa-whatsapp"></i>
-                                Inquire</a>
-                        </div>
-                        <div class="mt-2">
-                            <a href="" target="_blank" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book
-                                Now →</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="exp-card" data-category="lifestyle">
-                    <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=600&h=400&fit=crop"
-                        class="exp-img" alt="Private chef dinner">
-                    <div class="exp-body">
-                        <h3 class="exp-title">Private Chef Dinner</h3>
-                        <div class="location-text"><i class="fas fa-map-marker-alt"
-                                style="color: var(--sunrise-gold);"></i> Diani, Kilifi, Malindi, Watamu South Coast
-                        </div>
-                        <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
-                                class="ms-1 small text-muted">(4.9)</span></div>
-                        <div class="exp-desc">Romantic dinner setup at your villa. Swahili-seafood menu, tailored to
-                            your taste.</div>
-                        <div class="exp-meta"><span class="exp-price">KES 6,500</span><span class="exp-duration"><i
-                                    class="far fa-clock"></i> 3 hrs</span></div>
-                        <div class="card-buttons"><a href="exp-details.html" class="btn btn-outline-accent"><i
-                                    class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="btn btn-inquire wa-inquire"><i class="fab fa-whatsapp"></i>
-                                Inquire</a>
-                        </div>
-                        <div class="mt-2">
-                            <a href="" target="_blank" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book
-                                Now →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cultural & Local card -->
-                <div class="exp-card" data-category="cultural">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop"
-                        class="exp-img" alt="Swahili cooking class">
-                    <div class="exp-body">
-                        <h3 class="exp-title">Swahili Cooking Class</h3>
-                        <div class="location-text"><i class="fas fa-map-marker-alt"
-                                style="color: var(--sunrise-gold);"></i> Diani, Kilifi, Malindi, Watamu South Coast
-                        </div>
-                        <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span
-                                class="ms-1 small text-muted">(4.9)</span></div>
-                        <div class="exp-desc">Learn to make coconut fish curry, samosas, and chapati. Eat what you cook.
-                        </div>
-                        <div class="exp-meta"><span class="exp-price">KES 2,500</span><span class="exp-duration"><i
-                                    class="far fa-clock"></i> 3 hrs</span></div>
-                        <div class="card-buttons"><a href="exp-details.html" class="btn btn-outline-accent"><i
-                                    class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="btn btn-inquire wa-inquire"><i class="fab fa-whatsapp"></i>
-                                Inquire</a>
-                        </div>
-                        <div class="mt-2">
-                            <a href="" target="_blank" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book
-                                Now →</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
@@ -246,7 +125,7 @@
                 </p>
                 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
                     <a href="https://wildnomads.co.ke/tour" target="_blank" class="btn-hero-outline">Explore Tours</a>
-                    <a href="https://wildnomads.co.ke/contact" target="_blank"  class="btn-hero-primary">Plan My Trip →</a>
+                    <a href="https://wildnomads.co.ke/contact" target="_blank" class="btn-hero-primary">Plan My Trip →</a>
                 </div>
 
             </div>

@@ -63,6 +63,11 @@
                              <input type="email" class="form-control" id="stayEmail" name="email">
                          </div>
 
+                         <div class="col-md-12">
+                             <label class="form-label">Tagline *</label>
+                             <input type="text" class="form-control" id="stayTagline" name="tagline">
+                         </div>
+
                          <div class="col-12">
                              <label class="form-label">Short Excerpt *</label>
                              <textarea class="form-control" id="stayExcerpt" name="excerpt" rows="2"></textarea>
@@ -236,61 +241,52 @@
              <div class="modal-body">
                  <form id="addAmenityForm">
 
-    <input type="hidden" id="staysAmenityId" name="stay_id">
+                     <input type="hidden" id="staysAmenityId" name="stay_id">
 
-    <div id="amenitiesContainer">
+                     <div id="amenitiesContainer">
 
-        <div class="amenity-item border rounded p-3 mb-3">
+                         <div class="amenity-item border rounded p-3 mb-3">
 
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h6 class="mb-0">Amenity</h6>
+                             <div class="d-flex justify-content-between align-items-center mb-3">
+                                 <h6 class="mb-0">Amenity</h6>
 
-                <button type="button"
-                    class="btn btn-danger btn-sm remove-amenity">
-                    Remove
-                </button>
-            </div>
+                                 <button type="button" class="btn btn-danger btn-sm remove-amenity">
+                                     Remove
+                                 </button>
+                             </div>
 
-            <div class="row g-3">
+                             <div class="row g-3">
 
-                <div class="col-md-6">
-                    <label class="form-label">Title *</label>
+                                 <div class="col-md-6">
+                                     <label class="form-label">Title *</label>
 
-                    <input type="text"
-                        class="form-control"
-                        name="amenities[0][title]">
-                </div>
+                                     <input type="text" class="form-control" name="amenities[0][title]">
+                                 </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Icon *</label>
+                                 <div class="col-md-6">
+                                     <label class="form-label">Icon *</label>
 
-                    <input type="text"
-                        class="form-control"
-                        name="amenities[0][icon]"
-                        placeholder="e.g fa-wifi">
-                </div>
+                                     <input type="text" class="form-control" name="amenities[0][icon]"
+                                         placeholder="e.g fa-wifi">
+                                 </div>
 
-                <div class="col-md-12">
-                    <label class="form-label">Description *</label>
+                                 <div class="col-md-12">
+                                     <label class="form-label">Description *</label>
 
-                    <textarea class="form-control"
-                        name="amenities[0][description]"
-                        rows="3"></textarea>
-                </div>
+                                     <textarea class="form-control" name="amenities[0][description]" rows="3"></textarea>
+                                 </div>
 
-            </div>
+                             </div>
 
-        </div>
+                         </div>
 
-    </div>
+                     </div>
 
-    <button type="button"
-        class="btn btn-outline-primary"
-        id="addMoreAmenity">
-        + Add Another Amenity
-    </button>
+                     <button type="button" class="btn btn-outline-primary" id="addMoreAmenity">
+                         + Add Another Amenity
+                     </button>
 
-</form>
+                 </form>
              </div>
 
              <div class="modal-footer">
@@ -321,72 +317,62 @@
              <div class="modal-body">
                  <form id="addRoomAmenityForm">
 
-    <input type="hidden" id="staysRoomAmenityId" name="stay_id">
+                     <input type="hidden" id="staysRoomAmenityId" name="stay_id">
 
-    <div id="roomAmenitiesContainer">
+                     <div id="roomAmenitiesContainer">
 
-        <div class="room-amenity-item border rounded p-3 mb-3">
+                         <div class="room-amenity-item border rounded p-3 mb-3">
 
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h6 class="mb-0">Room Amenity</h6>
+                             <div class="d-flex justify-content-between align-items-center mb-3">
+                                 <h6 class="mb-0">Room Amenity</h6>
 
-                <button type="button"
-                    class="btn btn-danger btn-sm remove-room-amenity">
-                    Remove
-                </button>
-            </div>
+                                 <button type="button" class="btn btn-danger btn-sm remove-room-amenity">
+                                     Remove
+                                 </button>
+                             </div>
 
-            <div class="row g-3">
+                             <div class="row g-3">
 
-                <div class="col-md-6">
-                    <label class="form-label">Title *</label>
+                                 <div class="col-md-6">
+                                     <label class="form-label">Title *</label>
 
-                    <input type="text"
-                        class="form-control"
-                        name="room_amenities[0][title]">
-                </div>
+                                     <input type="text" class="form-control" name="room_amenities[0][title]">
+                                 </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Icon *</label>
+                                 <div class="col-md-6">
+                                     <label class="form-label">Icon *</label>
 
-                    <input type="text"
-                        class="form-control"
-                        name="room_amenities[0][icon]"
-                        placeholder="e.g fa-wifi">
-                </div>
+                                     <input type="text" class="form-control" name="room_amenities[0][icon]"
+                                         placeholder="e.g fa-wifi">
+                                 </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Room *</label>
+                                 <div class="col-md-6">
+                                     <label class="form-label">Room *</label>
 
-                    <select class="form-select"
-                        name="room_amenities[0][room_id]">
+                                     <select class="form-select" name="room_amenities[0][room_id]">
 
-                        <option value="">Select Room</option>
+                                         <option value="">Select Room</option>
 
-                    </select>
-                </div>
+                                     </select>
+                                 </div>
 
-                <div class="col-md-12">
-                    <label class="form-label">Description *</label>
+                                 <div class="col-md-12">
+                                     <label class="form-label">Description *</label>
 
-                    <textarea class="form-control"
-                        name="room_amenities[0][description]"
-                        rows="3"></textarea>
-                </div>
+                                     <textarea class="form-control" name="room_amenities[0][description]" rows="3"></textarea>
+                                 </div>
 
-            </div>
+                             </div>
 
-        </div>
+                         </div>
 
-    </div>
+                     </div>
 
-    <button type="button"
-        class="btn btn-outline-primary"
-        id="addMoreRoomAmenity">
-        + Add Another Room Amenity
-    </button>
+                     <button type="button" class="btn btn-outline-primary" id="addMoreRoomAmenity">
+                         + Add Another Room Amenity
+                     </button>
 
-</form>
+                 </form>
              </div>
 
              <div class="modal-footer">
@@ -507,72 +493,59 @@
              <div class="modal-body">
                  <form id="addExperienceItineraryForm">
 
-    <input type="hidden"
-        name="exps_id"
-        id="experienceItenaryId">
+                     <input type="hidden" name="exps_id" id="experienceItenaryId">
 
-    <div id="itineraryContainer">
+                     <div id="itineraryContainer">
 
-        <div class="itinerary-item border rounded p-3 mb-3">
+                         <div class="itinerary-item border rounded p-3 mb-3">
 
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h6 class="mb-0">Itinerary</h6>
+                             <div class="d-flex justify-content-between align-items-center mb-3">
+                                 <h6 class="mb-0">Itinerary</h6>
 
-                <button type="button"
-                    class="btn btn-danger btn-sm remove-itinerary">
-                    Remove
-                </button>
-            </div>
+                                 <button type="button" class="btn btn-danger btn-sm remove-itinerary">
+                                     Remove
+                                 </button>
+                             </div>
 
-            <div class="row g-3">
+                             <div class="row g-3">
 
-                <div class="col-md-6">
-                    <label class="form-label">Title *</label>
+                                 <div class="col-md-6">
+                                     <label class="form-label">Title *</label>
 
-                    <input type="text"
-                        class="form-control"
-                        name="itineraries[0][title]">
-                </div>
+                                     <input type="text" class="form-control" name="itineraries[0][title]">
+                                 </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Period *</label>
+                                 <div class="col-md-6">
+                                     <label class="form-label">Period *</label>
 
-                    <input type="text"
-                        class="form-control"
-                        name="itineraries[0][period]"
-                        placeholder="e.g Day 1 Morning">
-                </div>
+                                     <input type="text" class="form-control" name="itineraries[0][period]"
+                                         placeholder="e.g Day 1 Morning">
+                                 </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Sort Order</label>
+                                 <div class="col-md-6">
+                                     <label class="form-label">Sort Order</label>
 
-                    <input type="number"
-                        class="form-control"
-                        name="itineraries[0][sort_order]"
-                        value="0">
-                </div>
+                                     <input type="number" class="form-control" name="itineraries[0][sort_order]"
+                                         value="0">
+                                 </div>
 
-                <div class="col-md-12">
-                    <label class="form-label">Description *</label>
+                                 <div class="col-md-12">
+                                     <label class="form-label">Description *</label>
 
-                    <textarea class="form-control"
-                        name="itineraries[0][description]"
-                        rows="4"></textarea>
-                </div>
+                                     <textarea class="form-control" name="itineraries[0][description]" rows="4"></textarea>
+                                 </div>
 
-            </div>
+                             </div>
 
-        </div>
+                         </div>
 
-    </div>
+                     </div>
 
-    <button type="button"
-        class="btn btn-outline-primary"
-        id="addMoreItinerary">
-        + Add Another Itinerary
-    </button>
+                     <button type="button" class="btn btn-outline-primary" id="addMoreItinerary">
+                         + Add Another Itinerary
+                     </button>
 
-</form>
+                 </form>
              </div>
 
              <div class="modal-footer">
@@ -588,7 +561,7 @@
      </div>
  </div>
 
-  <div class="modal fade" id="addBusinessItemModal" tabindex="-1" aria-hidden="true">
+ <div class="modal fade" id="addBusinessItemModal" tabindex="-1" aria-hidden="true">
      <div class="modal-dialog modal-dialog-centered modal-md">
          <div class="modal-content">
 
@@ -675,12 +648,12 @@
                  <form id="addGalleryForm" enctype="multipart/form-data">
                      <div class="row g-3">
 
-                         <input type="text" class="form-control" name="exps_id" id="experienceGalleryId">
-                         <input type="text" class="form-control" name="stay_id" id="staysGalleryId">
+                         <input type="hidden" class="form-control" name="exps_id" id="experienceGalleryId">
+                         <input type="hidden" class="form-control" name="stay_id" id="staysGalleryId">
 
                          <div class="col-md-12">
                              <label class="form-label">Upload Images *</label>
-                             <input type="file" class="form-control" name="image_url[]" id="galleryImages"
+                             <input type="file" class="form-control" name="images[]" id="galleryImages"
                                  multiple accept="image/*">
                              <small class="text-muted">You can select multiple images</small>
                          </div>
@@ -690,7 +663,7 @@
 
              <div class="modal-footer">
                  <button type="button" class="btn-outline" data-bs-dismiss="modal">Cancel</button>
-                 <button type="button" class="btn-primary-travel">Upload Images</button>
+                 <button type="submit" form="addGalleryForm" class="btn-primary-travel">Upload Images</button>
              </div>
 
          </div>
@@ -730,21 +703,23 @@
 
                              <div class="row g-3">
 
-                                 <div class="col-md-6">
+                                 <div class="col-md-4">
                                      <label class="form-label">Title *</label>
                                      <input type="text" class="form-control" name="highlights[0][title]">
                                  </div>
 
-                                 <div class="col-md-6">
+                                 <div class="col-md-4">
                                      <label class="form-label">Icon *</label>
                                      <input type="text" class="form-control" name="highlights[0][icon]"
                                          placeholder="e.g fa-star">
                                  </div>
 
-                                 <div class="col-md-12">
+                                 <div class="col-md-4">
                                      <label class="form-label">Description *</label>
+                                     <input type="text" class="form-control" name="highlights[0][description]"
+                                         placeholder="e.g Ocean-view pool with swim-up bar">
 
-                                     <textarea class="form-control" name="highlights[0][description]" rows="3"></textarea>
+                                     {{-- <textarea class="form-control" name="highlights[0][description]" rows="3"></textarea> --}}
                                  </div>
 
                              </div>
@@ -1104,6 +1079,11 @@
                                  placeholder="https://...">
                          </div>
 
+                         <div class="col-md-12">
+                             <label class="form-label">Tagline *</label>
+                             <input type="text" class="form-control" id="expTagline" name="tagline">
+                         </div>
+
                          <div class="col-12">
                              <label class="form-label">Excerpt *</label>
                              <textarea class="form-control" name="excerpt" id="expExcerpt" rows="2"></textarea>
@@ -1338,14 +1318,14 @@
 
             <div class="row g-3">
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Title *</label>
                     <input type="text"
                         class="form-control"
                         name="highlights[${highlightIndex}][title]">
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Icon *</label>
                     <input type="text"
                         class="form-control"
@@ -1353,12 +1333,12 @@
                         placeholder="e.g fa-star">
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-4">
                     <label class="form-label">Description *</label>
-
-                    <textarea class="form-control"
+                    <input type="text"
+                        class="form-control"
                         name="highlights[${highlightIndex}][description]"
-                        rows="3"></textarea>
+                        placeholder="e.g Ocean-view pool with swim-up bar">
                 </div>
 
             </div>
@@ -1483,18 +1463,18 @@
      });
 
      let amenityIndex = 1;
-let roomAmenityIndex = 1;
-let itineraryIndex = 1;
+     let roomAmenityIndex = 1;
+     let itineraryIndex = 1;
 
-/*
-|--------------------------------------------------------------------------
-| AMENITIES
-|--------------------------------------------------------------------------
-*/
+     /*
+     |--------------------------------------------------------------------------
+     | AMENITIES
+     |--------------------------------------------------------------------------
+     */
 
-$('#addMoreAmenity').on('click', function () {
+     $('#addMoreAmenity').on('click', function() {
 
-    let html = `
+         let html = `
         <div class="amenity-item border rounded p-3 mb-3">
 
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -1537,26 +1517,26 @@ $('#addMoreAmenity').on('click', function () {
         </div>
     `;
 
-    $('#amenitiesContainer').append(html);
+         $('#amenitiesContainer').append(html);
 
-    amenityIndex++;
-});
+         amenityIndex++;
+     });
 
-$(document).on('click', '.remove-amenity', function () {
-    $(this).closest('.amenity-item').remove();
-});
+     $(document).on('click', '.remove-amenity', function() {
+         $(this).closest('.amenity-item').remove();
+     });
 
-/*
-|--------------------------------------------------------------------------
-| ROOM AMENITIES
-|--------------------------------------------------------------------------
-*/
+     /*
+     |--------------------------------------------------------------------------
+     | ROOM AMENITIES
+     |--------------------------------------------------------------------------
+     */
 
-$('#addMoreRoomAmenity').on('click', function () {
+     $('#addMoreRoomAmenity').on('click', function() {
 
-    let roomOptions = $('#roomAmenityRoomId').html();
+         let roomOptions = $('#roomAmenityRoomId').html();
 
-    let html = `
+         let html = `
         <div class="room-amenity-item border rounded p-3 mb-3">
 
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -1610,24 +1590,24 @@ $('#addMoreRoomAmenity').on('click', function () {
         </div>
     `;
 
-    $('#roomAmenitiesContainer').append(html);
+         $('#roomAmenitiesContainer').append(html);
 
-    roomAmenityIndex++;
-});
+         roomAmenityIndex++;
+     });
 
-$(document).on('click', '.remove-room-amenity', function () {
-    $(this).closest('.room-amenity-item').remove();
-});
+     $(document).on('click', '.remove-room-amenity', function() {
+         $(this).closest('.room-amenity-item').remove();
+     });
 
-/*
-|--------------------------------------------------------------------------
-| ITINERARIES
-|--------------------------------------------------------------------------
-*/
+     /*
+     |--------------------------------------------------------------------------
+     | ITINERARIES
+     |--------------------------------------------------------------------------
+     */
 
-$('#addMoreItinerary').on('click', function () {
+     $('#addMoreItinerary').on('click', function() {
 
-    let html = `
+         let html = `
         <div class="itinerary-item border rounded p-3 mb-3">
 
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -1679,12 +1659,12 @@ $('#addMoreItinerary').on('click', function () {
         </div>
     `;
 
-    $('#itineraryContainer').append(html);
+         $('#itineraryContainer').append(html);
 
-    itineraryIndex++;
-});
+         itineraryIndex++;
+     });
 
-$(document).on('click', '.remove-itinerary', function () {
-    $(this).closest('.itinerary-item').remove();
-});
+     $(document).on('click', '.remove-itinerary', function() {
+         $(this).closest('.itinerary-item').remove();
+     });
  </script>

@@ -9,6 +9,8 @@ use App\Http\Controllers\v1\accomodation\StaysController;
 use App\Http\Controllers\v1\experience\ExperienceController;
 use App\Http\Controllers\v1\guest\GuestsController;
 use App\Http\Controllers\v1\host\BusinessController;
+use App\Http\Controllers\v1\tabs\GalleryController;
+use App\Http\Controllers\v1\tabs\HighlightController;
 use Illuminate\Support\Facades\Route;
 
 // Home Page
@@ -20,7 +22,9 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/pricing', 'pricing')->name('pricing');
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/booking', 'booking')->name('booking');
+    Route::get('/experience/{id}', 'viewExperience')->name('experience.show');
     Route::get('/exp-details', 'expdetails')->name('expdetails');
+    Route::get('/stay/{id}', 'viewStay')->name('stay.show');
     Route::get('/stay-details', 'staydetails')->name('staydetails');
     Route::get('/acc-details', 'accdetails')->name('accdetails');
 });
@@ -60,4 +64,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('businesses/experience', ExperienceController::class);
     Route::resource('businesses/guests', GuestsController::class);
     Route::resource('businesses/rooms', RoomsController::class);
+    Route::resource('businesses/highlight', HighlightController::class);
+    Route::resource('businesses/gallery', GalleryController::class);
 });

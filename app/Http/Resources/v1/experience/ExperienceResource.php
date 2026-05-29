@@ -20,6 +20,7 @@ class ExperienceResource extends JsonResource
             'title' => $this->title,
             'slug' => $this->slug,
             'category' => $this->category,
+            'tagline' => $this->tagline,
 
             'location' => $this->location,
             'meetingPoint' => $this->meeting_point,

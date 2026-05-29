@@ -141,71 +141,94 @@
         <div class="container">
             <div class="section-title">Featured Stays</div>
             <div class="cards-grid fade-up">
-                <!-- Card 1 -->
-                <div class="stay-card">
-                    <img src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?w=600&h=400&fit=crop"
-                        class="stay-img" alt="Watamu Beach Resort">
-                    <div class="stay-body">
-                        <h3 class="stay-title">Watamu Beach Resort</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt"
-                                style="color:var(--sunrise-gold);"></i> Watamu, Kenya</div>
-                        <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            4.7</div>
-                        <p class="stay-desc">Oceanfront paradise with infinity pool and Swahili spa.</p>
-                        <div class="stay-price">KES 8,500 / night</div>
-                        <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
-                                class="btn-inquire">Inquire</a></div>
-                        <div class="mt-2">
-                            <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
+                @foreach ($stays as $stay)
+                    <div class="stay-card">
+                        @if ($stay->image_url)
+                            <img src="{{ asset('storage/' . $stay->image_url) }}" alt="{{ $stay->slug }} image"
+                                class="stay-img">
+                        @else
+                            <img src="{{ asset('assets/image/no-image.webp') }}" alt="No Image" class="stay-img">
+                        @endif
+                        <div class="stay-body">
+                            <h3 class="stay-title">{{ $stay->title }}</h3>
+                            <div class="stay-location"><i class="fas fa-map-marker-alt"
+                                    style="color:var(--sunrise-gold);"></i> {{ $stay->location }}</div>
+                            <div class="stay-rating">
+                                @for ($i = 1; $i <= $stay->rating; $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
+                                <span class="ms-1 small text-muted">({{ $stay->rating }})</span>
+                            </div>
+                            <p class="stay-desc">{{ $stay->excerpt }}</p>
+                            <div class="stay-price">{{ $stay->currency }} {{ $stay->price }}/ {{ ucwords(str_replace('_', ' ', $stay->rate)) }}</div>
+                            <div class="card-buttons">
+                                <a href="{{ route('stay.show', $stay->id) }}" class="btn-details">Details</a>
+                                <a href="https://wa.me/254102593346?text={{ urlencode("I'm interested in " . $stay->title) }}"
+                                    class="btn-inquire">Inquire</a>
+                            </div>
+                            <div class="mt-2">
+                                <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="stay-card">
-                    <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop"
-                        class="stay-img" alt="Mara Serena Safari Lodge">
-                    <div class="stay-body">
-                        <h3 class="stay-title">Mara Serena Safari Lodge</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt"
-                                style="color:var(--sunrise-gold);"></i> Masai Mara</div>
-                        <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
-                        <p class="stay-desc">Overlooking savannah, all-inclusive with game drives.</p>
-                        <div class="stay-price">KES 22,000 / night</div>
-                        <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
-                                class="btn-inquire">Inquire</a></div>
-                        <div class="mt-2">
-                            <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="stay-card">
-                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&h=400&fit=crop"
-                        class="stay-img" alt="The Sands at Nomad">
-                    <div class="stay-body">
-                        <h3 class="stay-title">The Sands at Nomad</h3>
-                        <div class="stay-location"><i class="fas fa-map-marker-alt"
-                                style="color:var(--sunrise-gold);"></i> Diani Beach</div>
-                        <div class="stay-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            4.8</div>
-                        <p class="stay-desc">Boutique chic, oceanfront suites, farm-to-table dining.</p>
-                        <div class="stay-price">KES 14,000 / night</div>
-                        <div class="card-buttons"><a href="#" class="btn-details">Details</a><a href="#"
-                                class="btn-inquire">Inquire</a></div>
-                        <div class="mt-2">
-                            <a href="#" class="btn-exp-book"><i class="fas fa-ticket-alt"></i> Book Now →</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="center-btn">
                 <a href="{{ route('stays') }}" class="btn-outline">Load More Items</a>
             </div>
         </div>
 
+        <div class="container">
+            <div class="section-title">Featured Experiences</div>
+            <div class="experiences-grid fade-up">
+                @foreach ($experiences as $experience)
+                    <div class="exp-card">
+                        @if ($experience->image_url)
+                            <img src="{{ asset('storage/' . $experience->image_url) }}"
+                                alt="{{ $experience->slug }} image" class="exp-img">
+                        @else
+                            <img src="{{ asset('assets/image/no-image.webp') }}" alt="No Image" class="exp-img">
+                        @endif
+                        <div class="exp-body">
+                            <h3 class="exp-title">{{ $experience->title }}</h3>
+                            <div class="location-text"><i class="fas fa-map-marker-alt"
+                                    style="color: var(--sunrise-gold);"></i> {{ $experience->location }}</div>
+                            <div class="rating-stars">
+                                @for ($i = 1; $i <= $experience->rating; $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
+                                <span class="ms-1 small text-muted">({{ $experience->rating }})</span>
+                            </div>
+                            <div class="exp-desc">{{ $experience->description }}</div>
+                            <div class="exp-meta">
+                                <span class="exp-price">{{ $experience->currency }} {{ $experience->price }}</span>
+                                <span class="exp-duration">
+                                    <i class="far fa-clock"></i> {{ $experience->duration }}
+                                </span>
+                            </div>
+                            <div class="card-buttons">
+                                <a href="{{ route('experience.show', $experience->id) }}" class="btn btn-outline-accent">
+                                    <i class="fas fa-info-circle"></i> Details
+                                </a>
+                                <a href="https://wa.me/254102593346?text={{ urlencode("I'm interested in " . $experience->title) }}"
+                                    class="btn btn-inquire wa-inquire">
+                                    <i class="fab fa-whatsapp"></i> Inquire
+                                </a>
+                            </div>
+                            <div class="mt-2">
+                                <a href="{{ route('booking') }}" target="_blank" class="btn-exp-book"><i
+                                        class="fas fa-ticket-alt"></i> Book
+                                    Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="center-btn">
+                <a href="{{ route('experiences') }}" class="btn-outline">Load More Experiences</a>
+            </div>
+        </div>
+        
         <!-- Features Section -->
         <div class="container">
             <div class="section-header-center">

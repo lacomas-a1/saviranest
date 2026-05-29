@@ -20,8 +20,8 @@
         @include('helper.nav')
 
         <div class="hero-content container">
-            <h1 class="hero-title">Watamu Beach Resort</h1>
-            <p class="hero-subtitle">Oceanfront Paradise · Infinity Pool · Direct Beach Access</p>
+            <h1 class="hero-title">{{ $stay->title }}</h1>
+            <p class="hero-subtitle">{{ $stay->tagline }}</p>
         </div>
     </header>
 
@@ -29,7 +29,8 @@
         <div class="container">
             <div class="resort-card fade-up">
                 <div class="position-relative">
-                    <div class="tour-badge"><i class="fas fa-crown me-1"></i> Luxury Beachfront</div>
+                    <div class="tour-badge"><i class="fas fa-crown me-1"></i> {{ ucfirst($stay->category) }} Beachfront
+                    </div>
                     <img src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-4.0.3"
                         alt="Watamu Beach Resort" class="tour-image">
                 </div>
@@ -37,19 +38,20 @@
                     <!-- Compact Action Bar -->
                     <div class="compact-action-bar">
                         <div class="d-flex flex-wrap gap-2">
-                            <span class="action-badge"><i class="fas fa-tag"></i> From KES 8,500/night</span>
-                            <span class="action-badge"><i class="fas fa-star"></i> 4.6/5 Rating</span>
+                            <span class="action-badge"><i class="fas fa-tag"></i> From {{ $stay->currency }}
+                                {{ $stay->price }}/{{ ucwords(str_replace('_', ' ', $stay->rate)) }}</span>
+                            <span class="action-badge"><i class="fas fa-star"></i> {{ $stay->rating }}/5 Rating</span>
                         </div>
                         <div class="d-flex flex-wrap gap-2">
-                            <a href="#" class="compact-btn compact-btn-primary"><i class="fas fa-paper-plane"></i>
+                            <a href="https://wa.me/254102593346?text={{ urlencode("I'm interested in " . $stay->title) }}"
+                                class="compact-btn compact-btn-primary"><i class="fas fa-paper-plane"></i>
                                 Inquiry</a>
                             <!-- <a href="https://wa.me/254700123456?text=I%20would%20like%20to%20book%20Watamu%20Beach%20Resort"
-                                target="_blank" class="compact-btn compact-btn-whatsapp"><i class="fab fa-whatsapp"></i>
-                                WhatsApp</a> -->
+                                                target="_blank" class="compact-btn compact-btn-whatsapp"><i class="fab fa-whatsapp"></i>
+                                                WhatsApp</a> -->
                             <!-- <a href="tel:+254700123456" class="compact-btn compact-btn-phone"><i
-                                    class="fas fa-phone"></i> Call</a> -->
-                            <a href="booking.html"
-                                class="compact-btn compact-btn-phone">
+                                                    class="fas fa-phone"></i> Call</a> -->
+                            <a href="booking.html" class="compact-btn compact-btn-phone">
                                 <i class="fas fa-ticket-alt"></i> Book
                             </a>
                         </div>
@@ -73,61 +75,23 @@
 
                     <!-- Overview Tab -->
                     <div id="overview" class="tab-pane active">
-                        <h2 class="mb-3">Watamu Beach Resort</h2>
+                        <h2 class="mb-3">{{ $stay->title }}</h2>
                         <div class="row mb-4">
                             <div class="col-md-12">
-                                <p class="lead">Nestled along the pristine shores of the Indian Ocean, Watamu Beach
-                                    Resort offers an authentic coastal escape. With 45 modern rooms, two infinity pools,
-                                    a world-class spa, and direct access to Watamu Marine National Park, it's the
-                                    perfect base for snorkeling, diving, or pure relaxation.</p>
+                                <p class="lead">{{ $stay->description }}</p>
                             </div>
                         </div>
                         <h3>Resort Highlights</h3>
                         <div class="feature-grid">
-                            <div class="feature-card">
-                                <div class="feature-icon"><i class="fas fa-swimmer"></i></div>
-                                <h5>Infinity Pool</h5>
-                                <p>Ocean-view pool with swim-up bar</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon"><i class="fas fa-spa"></i></div>
-                                <h5>Kaya Spa</h5>
-                                <p>Traditional Swahili massages</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon"><i class="fas fa-utensils"></i></div>
-                                <h5>Sea Breeze Restaurant</h5>
-                                <p>Fresh seafood & local cuisine</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon"><i class="fas fa-fish"></i></div>
-                                <h5>Dive Center</h5>
-                                <p>PADI courses & snorkeling trips</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
-                                <h5>Fitness Center</h5>
-                                <p>24/7 gym & yoga deck</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon"><i class="fas fa-wifi"></i></div>
-                                <h5>Free High-Speed WiFi</h5>
-                                <p>Throughout the resort</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon"><i class="fas fa-ship"></i></div>
-                                <h5>Boat Excursions</h5>
-                                <p>Sunset cruises & island hopping</p>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-icon"><i class="fas fa-cocktail"></i></div>
-                                <h5>Beach Bar</h5>
-                                <p>Signature cocktails by the ocean</p>
-                            </div>
+                            @foreach ($highlights as $highlight)
+                                <div class="feature-card">
+                                    <div class="feature-icon"><i class="{{ $highlight->icon }}"></i></div>
+                                    <h5>{{ $highlight->title }}</h5>
+                                    <p>{{ $highlight->description }}</p>
+                                </div>
+                            @endforeach
                         </div>
-                        <p>Watamu Beach Resort combines eco‑conscious luxury with genuine Swahili hospitality. Every
-                            room offers panoramic ocean views, and the resort operates on solar energy with a strong
-                            commitment to marine conservation.</p>
+                        <p>{{ $stay->excerpt }}</p>
                     </div>
 
                     <!-- Rooms Tab (same as original) -->
@@ -377,8 +341,9 @@
                                         <option value="5">★★★★★ (5)</option>
                                         <option value="4">★★★★☆ (4)</option>
                                     </select></div>
-                                <div class="col-12"><textarea id="reviewText" class="form-control" rows="3"
-                                        placeholder="Write your review..."></textarea></div>
+                                <div class="col-12">
+                                    <textarea id="reviewText" class="form-control" rows="3" placeholder="Write your review..."></textarea>
+                                </div>
                                 <div class="col-12"><button class="btn btn-primary"
                                         style="background:var(--support-green)" onclick="addNewReview()">Submit
                                         Review</button></div>
@@ -396,15 +361,11 @@
                     <h3 class="mt-5 mb-3">Photo Gallery</h3>
                     <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active"><img
-                                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5"
-                                    class="d-block w-100" alt="Pool"></div>
-                            <div class="carousel-item"><img
-                                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-                                    class="d-block w-100" alt="Beach"></div>
-                            <div class="carousel-item"><img
-                                    src="https://images.unsplash.com/photo-1547970810-dc1eac37d174"
-                                    class="d-block w-100" alt="Dining"></div>
+                            @foreach ($galleries as $key => $gallery)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <img src="{{ asset('storage/' . $gallery->image_url) }}" class="d-block w-100">
+                                </div>
+                            @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel"
                             data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
@@ -416,13 +377,13 @@
 
             <!-- CTA Section -->
             <!-- <div class="cta-block fade-up text-center">
-                <i class="fas fa-umbrella-beach" style="font-size: 2.5rem; color: var(--sunrise-gold);"></i>
-                <h3 style="font-size: 1.8rem; margin-top: 12px;">Book Your Coastal Escape</h3>
-                <p>Direct ocean views, Swahili hospitality, and unforgettable sunsets await.</p>
-                <button class="btn-large"
-                    onclick="alert('✨ Thank you for choosing Watamu Beach Resort! Our team will reach out to confirm your stay.')">Check
-                    Availability →</button>
-            </div> -->
+                                <i class="fas fa-umbrella-beach" style="font-size: 2.5rem; color: var(--sunrise-gold);"></i>
+                                <h3 style="font-size: 1.8rem; margin-top: 12px;">Book Your Coastal Escape</h3>
+                                <p>Direct ocean views, Swahili hospitality, and unforgettable sunsets await.</p>
+                                <button class="btn-large"
+                                    onclick="alert('✨ Thank you for choosing Watamu Beach Resort! Our team will reach out to confirm your stay.')">Check
+                                    Availability →</button>
+                            </div> -->
 
             <div class="mt-2 mb-4 text-center">
                 <a href="acc.html" class="btn-back-stays"><i class="fas fa-arrow-left me-2"></i>Back to

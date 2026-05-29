@@ -18,7 +18,7 @@
 <body>
 
     @yield('content')
-    
+
     <!-- Footer -->
     @include('helper.footer')
 

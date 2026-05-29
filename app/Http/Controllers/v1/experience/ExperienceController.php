@@ -66,6 +66,7 @@ class ExperienceController extends Controller
                 'title' => $data['title'],
                 'slug' => $data['slug'] ?? Str::slug($data['title']),
                 'category' => $data['category'],
+                'tagline' => $data['tagline'],
                 'location' => $data['location'],
                 'meeting_point' => $data['meeting_point'] ?? null,
                 'image_url' => $imagePath,

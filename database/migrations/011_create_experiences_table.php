@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('id')->primary();
             $table->string('title');
             $table->string('location');
+            $table->string('tagline')->nullable();
             $table->text('meeting_point')->nullable();
             $table->string('slug')->unique();
             $table->string('category');

@@ -25,6 +25,7 @@ class StoreStaysRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255|unique:listings,slug',
+            'tagline' => 'nullable|string|max:255',
 
             'category' => 'required|string|max:255',
             'location' => 'required|string|max:255',

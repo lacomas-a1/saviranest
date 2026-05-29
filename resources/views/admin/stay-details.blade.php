@@ -32,38 +32,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td data-label="Title">Sunset View</td>
-                            <td data-label="Description">Ocean sunset views from every balcony</td>
-                            <td data-label="Icon"><i class="fas fa-sun text-warning"></i></td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#highlightModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash-alt"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Title">Beach Access</td>
-                            <td data-label="Description">Private beach entry 2min walk</td>
-                            <td data-label="Icon"><i class="fas fa-umbrella-beach text-primary"></i></td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#highlightModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash-alt"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Title">Infinity Pool</td>
-                            <td data-label="Description">Heated ocean view pool</td>
-                            <td data-label="Icon"><i class="fas fa-water text-info"></i></td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#highlightModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash-alt"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Title">Spa & Wellness</td>
-                            <td data-label="Description">Full-service spa with ocean views</td>
-                            <td data-label="Icon"><i class="fas fa-spa text-success"></i></td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#highlightModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash-alt"></i></button></td>
-                        </tr>
+                        @foreach ($highlights as $highlight)
+                            <tr>
+                                <td data-label="Title">{{ $highlight->title }}</td>
+                                <td data-label="Description">{{ $highlight->description }}</td>
+                                <td data-label="Icon"><i class="{{ $highlight->icon }} text-warning"></i></td>
+                                <td data-label="Actions" class="btn-icon-group">
+                                    <button class="btn-edit" data-bs-toggle="modal" data-bs-target="#highlightModal">
+                                        <i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -81,39 +61,23 @@
                     <thead>
                         <tr>
                             <th>Image</th>
-                            <th>Title</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td data-label="Image"><img
-                                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=80&h=60&fit=crop"
-                                    class="gallery-thumb-sm" alt="ocean"></td>
-                            <td data-label="Title">Ocean Sunset</td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#galleryModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Image"><img
-                                    src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=80&h=60&fit=crop"
-                                    class="gallery-thumb-sm" alt="beach"></td>
-                            <td data-label="Title">Beach View</td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#galleryModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Image"><img
-                                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=80&h=60&fit=crop"
-                                    class="gallery-thumb-sm" alt="pool"></td>
-                            <td data-label="Title">Infinity Pool</td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-edit"
-                                    data-bs-toggle="modal" data-bs-target="#galleryModal"><i
-                                        class="fas fa-edit"></i></button><button class="btn-delete"><i
-                                        class="fas fa-trash"></i></button></td>
-                        </tr>
+                        @foreach ($galleries as $gallery)
+                            <tr>
+                                <td data-label="Image">
+                                    <img src="{{ asset('storage/' . $gallery->image_url) }}" class="gallery-thumb-sm"
+                                        alt="ocean">
+                                </td>
+                                <td data-label="Actions" class="btn-icon-group">
+                                    <button class="btn-edit" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                                        <i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -144,11 +108,11 @@
                             <td data-label="Description">King bed, ocean balcony, luxury bathroom</td>
                             <td data-label="Amenities"><span class="badge bg-light">WiFi, Minibar, Ocean
                                     View</span></td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-view"
-                                    data-bs-toggle="modal" data-bs-target="#roomDetailModal"><i
-                                        class="fas fa-eye"></i></button><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#roomModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash"></i></button></td>
+                            <td data-label="Actions" class="btn-icon-group"><button class="btn-view" data-bs-toggle="modal"
+                                    data-bs-target="#roomDetailModal"><i class="fas fa-eye"></i></button><button
+                                    class="btn-edit" data-bs-toggle="modal" data-bs-target="#roomModal"><i
+                                        class="fas fa-edit"></i></button><button class="btn-delete"><i
+                                        class="fas fa-trash"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Room name"><i class="fas fa-tree text-success me-1"></i> Deluxe
@@ -156,11 +120,11 @@
                             <td data-label="Description">Queen bed, garden terrace, quiet zone</td>
                             <td data-label="Amenities"><span class="badge bg-light">WiFi, Garden access</span>
                             </td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-view"
-                                    data-bs-toggle="modal" data-bs-target="#roomDetailModal"><i
-                                        class="fas fa-eye"></i></button><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#roomModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash"></i></button></td>
+                            <td data-label="Actions" class="btn-icon-group"><button class="btn-view" data-bs-toggle="modal"
+                                    data-bs-target="#roomDetailModal"><i class="fas fa-eye"></i></button><button
+                                    class="btn-edit" data-bs-toggle="modal" data-bs-target="#roomModal"><i
+                                        class="fas fa-edit"></i></button><button class="btn-delete"><i
+                                        class="fas fa-trash"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Room name"><i class="fas fa-umbrella-beach text-primary me-1"></i>
@@ -168,11 +132,11 @@
                             <td data-label="Description">Private pool, direct beach access</td>
                             <td data-label="Amenities"><span class="badge bg-light">Private pool, Butler, Beach
                                     kit</span></td>
-                            <td data-label="Actions" class="btn-icon-group"><button class="btn-view"
-                                    data-bs-toggle="modal" data-bs-target="#roomDetailModal"><i
-                                        class="fas fa-eye"></i></button><button class="btn-edit" data-bs-toggle="modal"
-                                    data-bs-target="#roomModal"><i class="fas fa-edit"></i></button><button
-                                    class="btn-delete"><i class="fas fa-trash"></i></button></td>
+                            <td data-label="Actions" class="btn-icon-group"><button class="btn-view" data-bs-toggle="modal"
+                                    data-bs-target="#roomDetailModal"><i class="fas fa-eye"></i></button><button
+                                    class="btn-edit" data-bs-toggle="modal" data-bs-target="#roomModal"><i
+                                        class="fas fa-edit"></i></button><button class="btn-delete"><i
+                                        class="fas fa-trash"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Room name"><i class="fas fa-mountain-sun text-secondary me-1"></i>
@@ -196,8 +160,8 @@
         <!-- GLOBAL AMENITIES TABLE -->
         <div class="card-section mt-2">
             <h6><span><i class="fas fa-concierge-bell"></i> Global Amenities</span>
-                <span class="btn-sm-outline open-stay-amenity" data-stays-id="{{ $stays->id }}" data-bs-toggle="modal"
-                    data-bs-target="#addAmenityModal">+ Add
+                <span class="btn-sm-outline open-stay-amenity" data-stays-id="{{ $stays->id }}"
+                    data-bs-toggle="modal" data-bs-target="#addAmenityModal">+ Add
                     Amenity</span>
             </h6>
             <div class="table-responsive">
@@ -264,8 +228,8 @@
         <!-- ROOM-SPECIFIC AMENITIES -->
         <div class="card-section mt-2">
             <h6><span><i class="fas fa-door-open"></i> Room Amenities (per room)</span>
-                <span class="btn-sm-outline open-room-amenity" data-stays-id="{{ $stays->id }}" data-bs-toggle="modal"
-                    data-bs-target="#addRoomAmenityModal">+ Assign
+                <span class="btn-sm-outline open-room-amenity" data-stays-id="{{ $stays->id }}"
+                    data-bs-toggle="modal" data-bs-target="#addRoomAmenityModal">+ Assign
                     to Room</span>
             </h6>
             <div class="table-responsive">

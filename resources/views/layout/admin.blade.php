@@ -199,6 +199,82 @@
                 }
             });
         });
+
+        $('#addHighlightForm').on('submit', function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            $.ajax({
+                url: '/businesses/highlight',
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+
+                success: function(response) {
+                    Swal.fire('Success', response.message, 'success');
+
+                    $('#addHighlightForm')[0].reset();
+
+                    let modalEl = document.getElementById('addHighlightModal');
+                    let modal = bootstrap.Modal.getInstance(modalEl);
+
+                    if (modal) {
+                        modal.hide();
+                    }
+
+                    window.location.reload();
+                    // window.location.href = '/accomodation';
+                },
+
+                error: function(xhr) {
+                    Swal.fire('Error', xhr.responseJSON.message, 'error');
+                }
+            });
+        });
+
+        $('#addGalleryForm').on('submit', function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            $.ajax({
+                url: '/businesses/gallery',
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+
+                success: function(response) {
+                    Swal.fire('Success', response.message, 'success');
+
+                    $('#addGalleryForm')[0].reset();
+
+                    let modalEl = document.getElementById('addGalleryModal');
+                    let modal = bootstrap.Modal.getInstance(modalEl);
+
+                    if (modal) {
+                        modal.hide();
+                    }
+
+                    window.location.reload();
+                    // window.location.href = '/accomodation';
+                },
+
+                error: function(xhr) {
+                    Swal.fire('Error', xhr.responseJSON.message, 'error');
+                }
+            });
+        });
     </script>
 
 </body>

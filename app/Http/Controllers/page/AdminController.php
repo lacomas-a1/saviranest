@@ -4,6 +4,8 @@ namespace App\Http\Controllers\page;
 
 use App\Http\Controllers\Controller;
 use App\Models\accomodation\Stays;
+use App\Models\tabs\Gallery;
+use App\Models\tabs\Highlight;
 
 class AdminController extends Controller
 {
@@ -53,8 +55,10 @@ class AdminController extends Controller
         $stay_id = session('selected_stay');
 
         $stays = Stays::where('id', $stay_id)->firstOrFail();
+        $highlights = Highlight::where('stay_id', $stay_id)->get();
+        $galleries = Gallery::where('stay_id', $stay_id)->get();
 
-        return view('admin.stay-details', compact(['seo', 'stays']));
+        return view('admin.stay-details', compact(['seo', 'stays', 'highlights', 'galleries']));
     }
 
     public function experience()

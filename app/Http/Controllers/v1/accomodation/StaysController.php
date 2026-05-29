@@ -67,6 +67,7 @@ class StaysController extends Controller
                 'slug' => $data['slug'] ?? Str::slug($data['title']),
                 'category' => $data['category'],
                 'location' => $data['location'],
+                'tagline' => $data['tagline'],
                 'image_url' => $imagePath,
                 'excerpt' => $data['excerpt'] ?? null,
                 'description' => $data['description'] ?? null,

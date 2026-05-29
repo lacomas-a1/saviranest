@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filters\v1\accomodation;
+namespace App\Filters\v1\tabs;
 
 use App\Filters\ApiFilter;
 
